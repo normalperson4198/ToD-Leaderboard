@@ -6,14 +6,14 @@ from pathlib import Path
 import requests
 
 
-# Global Demonlist API
-API_URL = "https://api.demonlist.org/user/get"
+API_BASE = "https://api.demonlist.org"
 
-# Where the generated data will be saved
+USER_API = f"{API_BASE}/user/get"
+RECORD_API = f"{API_BASE}/user/record/list"
+
 OUTPUT_FILE = Path("data/players.json")
 
 
-# Player username -> Global Demonlist user ID
 PLAYERS = {
     "went1xgmd": 38987,
     "Magnum": 18356,
@@ -48,16 +48,10 @@ PLAYERS = {
 }
 
 
-def get_player(user_id):
-    """
-    Get a player's profile from the Global Demonlist API.
-    """
-
+def request_json(url, params):
     response = requests.get(
-        API_URL,
-        params={
-            "id": user_id
-        },
+        url,
+        params=params,
         timeout=30,
     )
 
@@ -73,11 +67,79 @@ def get_player(user_id):
     return result["data"]
 
 
+def get_player(user_id):
+    return request_json(
+        USER_API,
+        {"id": user_id},
+    )
+
+
+def get_all_records(user_id):
+    """
+    Fetch every record for a player.
+
+    The API allows a maximum of 50 records per request,
+    so we continue requesting pages until we have them all.
+    """
+
+    records = []
+    offset = 0
+    limit = 50
+
+    while True:
+
+        data = request_json(
+            RECORD_API,
+            {
+                "user_id": user_id,
+                "limit": limit,
+                "offset": offset,
+            },
+        )
+
+        page = data.get("records", [])
+
+        records.extend(page)
+
+        total_count = data.get(
+            "total_count",
+            len(records),
+        )
+
+        if len(records) >= total_count:
+            break
+
+        if not page:
+            break
+
+        offset += limit
+
+        time.sleep(0.1)
+
+    return records
+
+
+def clean_record(record):
+    level = record.get("level") or {}
+
+    return {
+        "id": record.get("id"),
+        "percent": record.get("percent"),
+        "status": record.get("status"),
+        "video_url": record.get("video_url"),
+        "level": {
+            "id": level.get("id"),
+            "name": level.get("name"),
+            "placement": level.get("placement"),
+        },
+    }
+
+
 def main():
 
     players = {}
 
-    print("Updating Global Demonlist players...")
+    print("Updating Global Demonlist...")
     print()
 
     for expected_name, user_id in PLAYERS.items():
@@ -89,24 +151,47 @@ def main():
 
         try:
 
-            data = get_player(user_id)
+            profile = get_player(user_id)
+
+            records = get_all_records(user_id)
+
+            cleaned_records = [
+                clean_record(record)
+                for record in records
+            ]
+
+            completed = [
+                record
+                for record in cleaned_records
+                if (
+                    record["percent"] == 100
+                    and record["status"] == "accepted"
+                )
+            ]
 
             players[expected_name] = {
                 "id": user_id,
-                "username": data.get("username"),
-                "placement": data.get("placement"),
-                "points": data.get("points"),
-                "country": data.get("country"),
-                "badge": data.get("badge"),
-                "is_banned": data.get("is_banned"),
+                "username": profile.get("username"),
+                "placement": profile.get("placement"),
+                "points": (
+                    float(profile["points"])
+                    if profile.get("points") is not None
+                    else None
+                ),
+                "country": profile.get("country"),
+                "badge": profile.get("badge"),
+                "is_banned": profile.get("is_banned"),
+
+                "records": cleaned_records,
+
+                "completed_levels": completed,
             }
 
             print(
                 f"  OK | "
-                f"{data.get('username')} | "
-                f"#{data.get('placement')} | "
-                f"{data.get('points')} points | "
-                f"{data.get('country')}"
+                f"#{profile.get('placement')} | "
+                f"{profile.get('points')} points | "
+                f"{len(completed)} completed levels"
             )
 
         except Exception as error:
@@ -115,8 +200,6 @@ def main():
                 f"  ERROR: {error}"
             )
 
-            # Keep the player in the JSON even if
-            # the API temporarily fails.
             players[expected_name] = {
                 "id": user_id,
                 "username": expected_name,
@@ -125,14 +208,14 @@ def main():
                 "country": None,
                 "badge": None,
                 "is_banned": None,
+                "records": [],
+                "completed_levels": [],
                 "error": str(error),
             }
 
-        # Small delay between requests.
+        # Avoid hammering the API.
         time.sleep(0.2)
 
-
-    # Create final JSON object
     output = {
         "updated_at": datetime.now(
             timezone.utc
@@ -141,15 +224,11 @@ def main():
         "players": players,
     }
 
-
-    # Make sure data/ exists
     OUTPUT_FILE.parent.mkdir(
         parents=True,
-        exist_ok=True
+        exist_ok=True,
     )
 
-
-    # Write JSON
     OUTPUT_FILE.write_text(
         json.dumps(
             output,
@@ -159,14 +238,13 @@ def main():
         encoding="utf-8",
     )
 
-
     print()
     print(
         f"Finished! Updated {len(players)} players."
     )
 
     print(
-        f"Saved to: {OUTPUT_FILE}"
+        f"Saved to {OUTPUT_FILE}"
     )
 
 
