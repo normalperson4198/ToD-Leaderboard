@@ -1,44 +1,169 @@
-body {
-    margin: 0;
-    padding: 40px;
-
-    background: #111827;
-    color: white;
-
-    font-family: Arial, sans-serif;
+* {
+    box-sizing: border-box;
 }
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: #0d1117;
+
+    color: #f0f6fc;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+
+main {
+
+    width: min(
+        1100px,
+        calc(100% - 32px)
+    );
+
+    margin: 0 auto;
+
+    padding: 50px 0;
+
+}
+
+
+header {
+
+    margin-bottom: 30px;
+
+}
+
 
 h1 {
-    margin-bottom: 5px;
+
+    margin: 0;
+
+    font-size: 42px;
+
 }
+
+
+header p {
+
+    color: #8b949e;
+
+    font-size: 18px;
+
+}
+
 
 #updated {
-    color: #9ca3af;
-    margin-bottom: 30px;
+
+    color: #8b949e;
+
+    font-size: 14px;
+
 }
 
+
+.table-container {
+
+    overflow-x: auto;
+
+    border: 1px solid #30363d;
+
+    border-radius: 12px;
+
+}
+
+
 table {
+
     width: 100%;
-    max-width: 900px;
 
     border-collapse: collapse;
 
-    background: #1f2937;
 }
 
-th,
-td {
-    padding: 14px;
+
+th {
+
+    background: #161b22;
+
+    color: #8b949e;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
 
     text-align: left;
 
-    border-bottom: 1px solid #374151;
 }
 
-th {
-    background: #374151;
+
+th,
+td {
+
+    padding: 16px;
+
+    border-bottom:
+        1px solid #21262d;
+
 }
 
-tr:hover {
-    background: #273449;
+
+tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+
+tbody tr:hover {
+
+    background: #161b22;
+
+}
+
+
+.username {
+
+    font-weight: bold;
+
+}
+
+
+.banned {
+
+    opacity: 0.5;
+
+}
+
+
+@media (max-width: 600px) {
+
+    main {
+
+        padding-top: 30px;
+
+    }
+
+
+    h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    th,
+    td {
+
+        padding: 12px;
+
+    }
+
 }
