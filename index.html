@@ -1,49 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Global Demonlist Players</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <h1>Global Demonlist Players</h1>
+    <main>
 
-    <p id="updated">Loading...</p>
+        <header>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Player</th>
-                <th>Flag</th>
-                <th>Points</th>
-            </tr>
-        </thead>
+            <h1>Global Demonlist</h1>
 
-        <tbody id="players">
-        </tbody>
-    </table>
+            <p>
+                Selected player statistics
+            </p>
+
+            <div id="updated">
+                Loading...
+            </div>
+
+        </header>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Player</th>
+
+                        <th>Country</th>
+
+                        <th>Placement</th>
+
+                        <th>Points</th>
+
+                        <th>Badge</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="players">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
 
     <script>
 
-        function flagEmoji(countryCode) {
-            if (!countryCode) {
-                return "🏳️";
+        const COUNTRY_FLAGS = {
+
+            "Russia": "🇷🇺",
+            "Germany": "🇩🇪",
+            "United States": "🇺🇸",
+            "United Kingdom": "🇬🇧",
+            "France": "🇫🇷",
+            "Poland": "🇵🇱",
+            "Ukraine": "🇺🇦",
+            "Spain": "🇪🇸",
+            "Brazil": "🇧🇷",
+            "Canada": "🇨🇦",
+            "Australia": "🇦🇺",
+            "Netherlands": "🇳🇱",
+            "Sweden": "🇸🇪",
+            "Norway": "🇳🇴",
+            "Finland": "🇫🇮",
+            "Denmark": "🇩🇰",
+            "Italy": "🇮🇹",
+            "Japan": "🇯🇵",
+            "South Korea": "🇰🇷",
+            "China": "🇨🇳",
+            "Mexico": "🇲🇽",
+            "Argentina": "🇦🇷",
+            "Chile": "🇨🇱",
+            "Turkey": "🇹🇷",
+            "Czech Republic": "🇨🇿",
+            "Romania": "🇷🇴",
+            "Hungary": "🇭🇺",
+            "Portugal": "🇵🇹",
+            "Belgium": "🇧🇪",
+            "Austria": "🇦🇹",
+            "Switzerland": "🇨🇭"
+        };
+
+
+        function getFlag(country) {
+
+            return COUNTRY_FLAGS[country] || "🏳️";
+
+        }
+
+
+        function formatPoints(points) {
+
+            if (points === null || points === undefined) {
+
+                return "—";
+
             }
 
-            return countryCode
-                .toUpperCase()
-                .split("")
-                .map(letter =>
-                    String.fromCodePoint(
-                        127397 + letter.charCodeAt(0)
-                    )
-                )
-                .join("");
+            return Number(points).toLocaleString(
+                undefined,
+                {
+                    maximumFractionDigits: 2
+                }
+            );
+
         }
 
 
@@ -53,43 +139,128 @@
                 "data/players.json?" + Date.now()
             );
 
+            if (!response.ok) {
+
+                throw new Error(
+                    "Could not load players.json"
+                );
+
+            }
+
+
             const data = await response.json();
 
-            document.getElementById("updated").textContent =
-                "Last updated: " +
-                new Date(data.updated_at).toLocaleString();
+
+            const players =
+                Object.values(data.players);
+
+
+            /*
+             * Sort by Global Demonlist placement.
+             */
+
+            players.sort((a, b) => {
+
+                if (
+                    a.placement === null ||
+                    a.placement === undefined
+                ) {
+                    return 1;
+                }
+
+                if (
+                    b.placement === null ||
+                    b.placement === undefined
+                ) {
+                    return -1;
+                }
+
+                return a.placement - b.placement;
+
+            });
 
 
             const tbody =
                 document.getElementById("players");
 
+
             tbody.innerHTML = "";
 
 
-            for (const [name, player] of Object.entries(data.players)) {
+            for (const player of players) {
 
-                const row = document.createElement("tr");
+                const row =
+                    document.createElement("tr");
+
 
                 row.innerHTML = `
-                    <td>${name}</td>
 
-                    <td>
-                        ${flagEmoji(player.flag)}
+                    <td class="username">
+                        ${player.username}
                     </td>
 
                     <td>
-                        ${player.points ?? "N/A"}
+                        ${getFlag(player.country)}
+                        ${player.country ?? "Unknown"}
                     </td>
+
+                    <td>
+                        ${
+                            player.placement ??
+                            "—"
+                        }
+                    </td>
+
+                    <td>
+                        ${formatPoints(player.points)}
+                    </td>
+
+                    <td>
+                        ${
+                            player.badge ??
+                            "—"
+                        }
+                    </td>
+
                 `;
 
+
+                if (player.is_banned) {
+
+                    row.classList.add("banned");
+
+                }
+
+
                 tbody.appendChild(row);
+
             }
+
+
+            document.getElementById(
+                "updated"
+            ).textContent =
+                "Last updated: " +
+                new Date(
+                    data.updated_at
+                ).toLocaleString();
+
         }
 
 
-        loadPlayers();
+        loadPlayers().catch(error => {
+
+            console.error(error);
+
+            document.getElementById(
+                "updated"
+            ).textContent =
+                "Unable to load player data.";
+
+        });
 
     </script>
 
 </body>
+
 </html>
