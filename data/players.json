@@ -1,4 +1,305 @@
 {
-  "updated_at": null,
-  "players": {}
+  "updated_at": "2026-08-23T15:56:46.241923+00:00",
+  "players": {
+    "went1xgmd": {
+      "id": 38987,
+      "username": "went1xgmd",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=38987"
+    },
+    "Magnum": {
+      "id": 18356,
+      "username": "Magnum",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=18356"
+    },
+    "Zafsa": {
+      "id": 18651,
+      "username": "Zafsa",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=18651"
+    },
+    "Vanchos": {
+      "id": 18210,
+      "username": "Vanchos",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=18210"
+    },
+    "Фанат Абстракта": {
+      "id": 951,
+      "username": "Фанат Абстракта",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=951"
+    },
+    "arslnxx": {
+      "id": 19027,
+      "username": "arslnxx",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=19027"
+    },
+    "SashaKray": {
+      "id": 7560,
+      "username": "SashaKray",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=7560"
+    },
+    "Amabest": {
+      "id": 29826,
+      "username": "Amabest",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=29826"
+    },
+    "LoyalVladik": {
+      "id": 21713,
+      "username": "LoyalVladik",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=21713"
+    },
+    "egyssgd": {
+      "id": 31906,
+      "username": "egyssgd",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=31906"
+    },
+    "Velance": {
+      "id": 24510,
+      "username": "Velance",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=24510"
+    },
+    "ferux": {
+      "id": 33994,
+      "username": "ferux",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=33994"
+    },
+    "Mateex": {
+      "id": 6053,
+      "username": "Mateex",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=6053"
+    },
+    "forewad": {
+      "id": 21129,
+      "username": "forewad",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=21129"
+    },
+    "CosmoReator": {
+      "id": 24070,
+      "username": "CosmoReator",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=24070"
+    },
+    "noN2me": {
+      "id": 28295,
+      "username": "noN2me",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=28295"
+    },
+    "M Ok You": {
+      "id": 41742,
+      "username": "M Ok You",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=41742"
+    },
+    "mirageee": {
+      "id": 28256,
+      "username": "mirageee",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=28256"
+    },
+    "Stylish": {
+      "id": 2629,
+      "username": "Stylish",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=2629"
+    },
+    "meyv": {
+      "id": 37330,
+      "username": "meyv",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=37330"
+    },
+    "Redis_GD435": {
+      "id": 21222,
+      "username": "Redis_GD435",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=21222"
+    },
+    "Kinoxas": {
+      "id": 26120,
+      "username": "Kinoxas",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=26120"
+    },
+    "clandd": {
+      "id": 29605,
+      "username": "clandd",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=29605"
+    },
+    "Skraity": {
+      "id": 28896,
+      "username": "Skraity",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=28896"
+    },
+    "StintlerGD": {
+      "id": 18689,
+      "username": "StintlerGD",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=18689"
+    },
+    "z0n1x": {
+      "id": 26345,
+      "username": "z0n1x",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=26345"
+    },
+    "Tanker674": {
+      "id": 26186,
+      "username": "Tanker674",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=26186"
+    },
+    "Paberik": {
+      "id": 31056,
+      "username": "Paberik",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=31056"
+    },
+    "JabkaGD": {
+      "id": 3912,
+      "username": "JabkaGD",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=3912"
+    },
+    "n0rmalGD": {
+      "id": 29533,
+      "username": "n0rmalGD",
+      "placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "error": "403 Client Error: Forbidden for url: https://demonlist.org/api/user/getCache?id=29533"
+    }
+  }
 }
