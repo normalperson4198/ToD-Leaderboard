@@ -10,6 +10,7 @@ API_BASE = "https://api.demonlist.org"
 
 USER_API = f"{API_BASE}/user/get"
 RECORD_API = f"{API_BASE}/user/record/list"
+LEVEL_API = f"{API_BASE}/level/classic/getCache"
 
 OUTPUT_FILE = Path("data/players.json")
 
@@ -48,11 +49,19 @@ PLAYERS = {
 }
 
 
+session = requests.Session()
+
+session.headers.update({
+    "User-Agent": "GlobalDemonlistPlayerTracker/1.0"
+})
+
+
 def request_json(url, params):
-    response = requests.get(
+
+    response = session.get(
         url,
         params=params,
-        timeout=30,
+        timeout=30
     )
 
     response.raise_for_status()
@@ -68,21 +77,19 @@ def request_json(url, params):
 
 
 def get_player(user_id):
+
     return request_json(
         USER_API,
-        {"id": user_id},
+        {
+            "id": user_id
+        }
     )
 
 
-def get_all_records(user_id):
-    """
-    Fetch every record for a player.
-
-    The API allows a maximum of 50 records per request,
-    so we continue requesting pages until we have them all.
-    """
+def get_records(user_id):
 
     records = []
+
     offset = 0
     limit = 50
 
@@ -93,20 +100,20 @@ def get_all_records(user_id):
             {
                 "user_id": user_id,
                 "limit": limit,
-                "offset": offset,
-            },
+                "offset": offset
+            }
         )
 
         page = data.get("records", [])
 
         records.extend(page)
 
-        total_count = data.get(
+        total = data.get(
             "total_count",
-            len(records),
+            len(records)
         )
 
-        if len(records) >= total_count:
+        if len(records) >= total:
             break
 
         if not page:
@@ -119,19 +126,116 @@ def get_all_records(user_id):
     return records
 
 
-def clean_record(record):
+def get_level(level_id):
+
+    try:
+
+        return request_json(
+            LEVEL_API,
+            {
+                "id": level_id
+            }
+        )
+
+    except Exception as error:
+
+        print(
+            f"      Could not fetch level "
+            f"{level_id}: {error}"
+        )
+
+        return None
+
+
+def clean_level(record):
+
     level = record.get("level") or {}
 
+    level_id = level.get("id")
+
+    detailed = None
+
+    if level_id:
+        detailed = get_level(level_id)
+
+    if detailed:
+
+        level_name = detailed.get(
+            "name",
+            level.get("name")
+        )
+
+        placement = detailed.get(
+            "placement",
+            level.get("placement")
+        )
+
+        points = detailed.get("points")
+
+        ingame_id = detailed.get(
+            "ingame_id"
+        )
+
+        creator = detailed.get(
+            "creator"
+        )
+
+        holder = detailed.get(
+            "holder"
+        )
+
+        verification_url = (
+            detailed
+            .get("verification", {})
+            .get("video_url")
+        )
+
+    else:
+
+        level_name = level.get("name")
+        placement = level.get("placement")
+        points = None
+        ingame_id = None
+        creator = None
+        holder = None
+        verification_url = None
+
     return {
-        "id": record.get("id"),
-        "percent": record.get("percent"),
-        "status": record.get("status"),
-        "video_url": record.get("video_url"),
-        "level": {
-            "id": level.get("id"),
-            "name": level.get("name"),
-            "placement": level.get("placement"),
-        },
+
+        "id": level_id,
+
+        "ingame_id": ingame_id,
+
+        "name": level_name,
+
+        "placement": placement,
+
+        "points": points,
+
+        "creator": creator,
+
+        "holder": holder,
+
+        "verification_url": verification_url,
+
+        "level_url": (
+            f"https://demonlist.org/classic/{level_id}"
+            if level_id
+            else None
+        ),
+
+        "video_url": record.get(
+            "video_url"
+        ),
+
+        "percent": record.get(
+            "percent"
+        ),
+
+        "status": record.get(
+            "status"
+        )
+
     }
 
 
@@ -153,45 +257,74 @@ def main():
 
             profile = get_player(user_id)
 
-            records = get_all_records(user_id)
+            raw_records = get_records(user_id)
 
-            cleaned_records = [
-                clean_record(record)
-                for record in records
-            ]
-
-            completed = [
+            completed_records = [
                 record
-                for record in cleaned_records
+                for record in raw_records
                 if (
-                    record["percent"] == 100
-                    and record["status"] == "accepted"
+                    record.get("percent") == 100
+                    and record.get("status") == "accepted"
                 )
             ]
 
+            print(
+                f"  Found "
+                f"{len(completed_records)} "
+                f"completed levels"
+            )
+
+            completed_levels = []
+
+            for record in completed_records:
+
+                level = clean_level(record)
+
+                completed_levels.append(level)
+
+                time.sleep(0.08)
+
+            points = profile.get("points")
+
+            if points is not None:
+                points = float(points)
+
             players[expected_name] = {
+
                 "id": user_id,
-                "username": profile.get("username"),
-                "placement": profile.get("placement"),
-                "points": (
-                    float(profile["points"])
-                    if profile.get("points") is not None
-                    else None
+
+                "username": profile.get(
+                    "username"
                 ),
-                "country": profile.get("country"),
-                "badge": profile.get("badge"),
-                "is_banned": profile.get("is_banned"),
 
-                "records": cleaned_records,
+                # Global Demonlist placement
+                "global_placement": profile.get(
+                    "placement"
+                ),
 
-                "completed_levels": completed,
+                "points": points,
+
+                "country": profile.get(
+                    "country"
+                ),
+
+                "badge": profile.get(
+                    "badge"
+                ),
+
+                "is_banned": profile.get(
+                    "is_banned"
+                ),
+
+                "completed_levels":
+                    completed_levels
+
             }
 
             print(
-                f"  OK | "
+                f"  Global: "
                 f"#{profile.get('placement')} | "
-                f"{profile.get('points')} points | "
-                f"{len(completed)} completed levels"
+                f"{points} points"
             )
 
         except Exception as error:
@@ -201,50 +334,59 @@ def main():
             )
 
             players[expected_name] = {
+
                 "id": user_id,
+
                 "username": expected_name,
-                "placement": None,
+
+                "global_placement": None,
+
                 "points": None,
+
                 "country": None,
+
                 "badge": None,
+
                 "is_banned": None,
-                "records": [],
+
                 "completed_levels": [],
-                "error": str(error),
+
+                "error": str(error)
+
             }
 
-        # Avoid hammering the API.
+        print()
+
         time.sleep(0.2)
 
     output = {
-        "updated_at": datetime.now(
-            timezone.utc
-        ).isoformat(),
 
-        "players": players,
+        "updated_at":
+            datetime.now(
+                timezone.utc
+            ).isoformat(),
+
+        "players": players
+
     }
 
     OUTPUT_FILE.parent.mkdir(
         parents=True,
-        exist_ok=True,
+        exist_ok=True
     )
 
     OUTPUT_FILE.write_text(
         json.dumps(
             output,
             ensure_ascii=False,
-            indent=2,
+            indent=2
         ),
-        encoding="utf-8",
-    )
-
-    print()
-    print(
-        f"Finished! Updated {len(players)} players."
+        encoding="utf-8"
     )
 
     print(
-        f"Saved to {OUTPUT_FILE}"
+        f"Finished! Saved to "
+        f"{OUTPUT_FILE}"
     )
 
 
