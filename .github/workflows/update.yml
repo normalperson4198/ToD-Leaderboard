@@ -1,14 +1,21 @@
-name: Update Global Demonlist data
+name: Update Global Demonlist
+
 
 on:
+
   schedule:
+
     - cron: "*/10 * * * *"
 
   workflow_dispatch:
 
+
 permissions:
+
   contents: write
+
   pages: write
+
   id-token: write
 
 
@@ -18,31 +25,43 @@ jobs:
 
     runs-on: ubuntu-latest
 
+
     steps:
 
       - name: Checkout repository
+
         uses: actions/checkout@v4
 
 
       - name: Setup Python
+
         uses: actions/setup-python@v5
 
         with:
+
           python-version: "3.x"
 
 
-      - name: Install requests
-        run: pip install requests
+      - name: Install dependencies
 
-
-      - name: Update player data
-        run: python update.py
-
-
-      - name: Commit updated JSON
         run: |
 
-          git config user.name "github-actions[bot]"
+          pip install requests
+
+
+      - name: Fetch Global Demonlist data
+
+        run: |
+
+          python update.py
+
+
+      - name: Commit updated data
+
+        run: |
+
+          git config user.name \
+            "github-actions[bot]"
 
           git config user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
@@ -50,6 +69,26 @@ jobs:
           git add data/players.json
 
           git diff --cached --quiet || \
-            git commit -m "Update Global Demonlist data"
+            git commit \
+            -m "Update Global Demonlist data"
 
           git push
+
+
+      - name: Setup GitHub Pages
+
+        uses: actions/configure-pages@v5
+
+
+      - name: Upload website
+
+        uses: actions/upload-pages-artifact@v3
+
+        with:
+
+          path: .
+
+
+      - name: Deploy website
+
+        uses: actions/deploy-pages@v4
