@@ -1,394 +1,2073 @@
-import json
-import time
-from datetime import datetime, timezone
-from pathlib import Path
+<!DOCTYPE html>
+<html lang="en">
 
-import requests
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="ToD player tracker"
+    >
+
+    <title>GD Tracker</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
 
 
-API_BASE = "https://api.demonlist.org"
+<body>
 
-USER_API = f"{API_BASE}/user/get"
-RECORD_API = f"{API_BASE}/user/record/list"
-LEVEL_API = f"{API_BASE}/level/classic/getCache"
+<div class="background">
 
-OUTPUT_FILE = Path("data/players.json")
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="grid"></div>
+
+</div>
 
 
-PLAYERS = {
-    "went1xgmd": 38987,
-    "Magnum": 18356,
-    "Zafsa": 18651,
-    "Vanchos": 18210,
-    "Фанат Абстракта": 951,
-    "arslnxx": 19027,
-    "SashaKray": 7560,
-    "Amabest": 29826,
-    "LoyalVladik": 21713,
-    "egyssgd": 31906,
-    "Velance": 24510,
-    "ferux": 33994,
-    "Mateex": 6053,
-    "forewad": 21129,
-    "CosmoReator": 24070,
-    "noN2me": 28295,
-    "M Ok You": 41742,
-    "mirageee": 28256,
-    "Stylish": 2629,
-    "meyv": 37330,
-    "Redis_GD435": 21222,
-    "Kinoxas": 26120,
-    "clandd": 29605,
-    "Skraity": 28896,
-    "StintlerGD": 18689,
-    "z0n1x": 26345,
-    "Tanker674": 26186,
-    "Paberik": 31056,
-    "JabkaGD": 3912,
-    "n0rmalGD": 29533,
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="navbar">
+
+    <div class="nav-inner">
+
+        <a
+            href="#"
+            class="brand"
+            onclick="showTab('players'); return false;"
+        >
+
+            <div class="brand-icon">
+                GD
+            </div>
+
+            <div>
+
+                <div class="brand-name">
+                    GD Tracker
+                </div>
+
+                <div class="brand-subtitle">
+                    ToD Demonlist
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <nav class="tabs">
+
+            <button
+                class="tab active"
+                data-tab="players"
+                onclick="showTab('players')"
+            >
+
+                <span class="tab-icon">
+                    ◈
+                </span>
+
+                Players
+
+            </button>
+
+
+            <button
+                class="tab"
+                data-tab="demons"
+                onclick="showTab('demons')"
+            >
+
+                <span class="tab-icon">
+                    ◆
+                </span>
+
+                Demonlist
+
+            </button>
+
+        </nav>
+
+
+        <div class="nav-status">
+
+            <span class="status-dot"></span>
+
+            <span>
+                Live data
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="container">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+
+                <span class="eyebrow-dot"></span>
+
+                ToD DEMONLIST TRACKER
+
+            </div>
+
+
+            <h1>
+
+                Track the players.
+
+                <span>
+                    Chase the demons.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                A live leaderboard for our players,
+                powered by Global Demonlist data.
+
+                Track points, rankings and the hardest
+                demons completed by everyone.
+
+            </p>
+
+
+            <div class="hero-stats">
+
+                <div class="hero-stat">
+
+                    <strong id="hero-player-count">
+                        —
+                    </strong>
+
+                    <span>
+                        Players
+                    </span>
+
+                </div>
+
+
+                <div class="hero-divider"></div>
+
+
+                <div class="hero-stat">
+
+                    <strong id="hero-demon-count">
+                        —
+                    </strong>
+
+                    <span>
+                        Demons
+                    </span>
+
+                </div>
+
+
+                <div class="hero-divider"></div>
+
+
+                <div class="hero-stat">
+
+                    <strong id="hero-total-points">
+                        —
+                    </strong>
+
+                    <span>
+                        Total points
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-decoration">
+
+            <div class="orb orb-one"></div>
+
+            <div class="orb orb-two"></div>
+
+            <div class="diamond">
+
+                <span>
+                    GD
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PLAYERS TAB
+    ====================================================== -->
+
+    <section
+        id="players-tab"
+        class="tab-content active"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-label">
+                    LEADERBOARD
+                </div>
+
+                <h2>
+                    Our Players
+                </h2>
+
+                <p>
+                    Ranked by Global Demonlist points.
+                </p>
+
+            </div>
+
+
+            <div class="updated-box">
+
+                <span class="updated-dot"></span>
+
+                <span id="updated">
+                    Updating...
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTROLS -->
+
+        <div class="controls">
+
+            <div class="search-box">
+
+                <span class="search-icon">
+                    ⌕
+                </span>
+
+                <input
+                    type="text"
+                    id="player-search"
+                    placeholder="Search players..."
+                    autocomplete="off"
+                >
+
+                <kbd>
+                    /
+                </kbd>
+
+            </div>
+
+
+            <div class="select-box">
+
+                <select id="player-sort">
+
+                    <option value="points">
+                        Points ranking
+                    </option>
+
+                    <option value="global">
+                        Global placement
+                    </option>
+
+                    <option value="completed">
+                        Most completed
+                    </option>
+
+                    <option value="name">
+                        Name
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PLAYER LIST -->
+
+        <div
+            id="players"
+            class="players-grid"
+        >
+
+            <div class="loading">
+
+                <div class="loader"></div>
+
+                Loading players...
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DEMONLIST TAB
+    ====================================================== -->
+
+    <section
+        id="demons-tab"
+        class="tab-content"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-label">
+                    COMPLETIONS
+                </div>
+
+                <h2>
+                    Demonlist
+                </h2>
+
+                <p>
+                    The hardest demons completed by our players.
+                </p>
+
+            </div>
+
+
+            <div class="demon-count-badge">
+
+                <span id="demonlist-count">
+                    0
+                </span>
+
+                demons
+
+            </div>
+
+        </div>
+
+
+
+        <div class="demon-controls">
+
+            <div class="search-box">
+
+                <span class="search-icon">
+                    ⌕
+                </span>
+
+                <input
+                    type="text"
+                    id="demon-search"
+                    placeholder="Search demons..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="select-box">
+
+                <select id="demon-sort">
+
+                    <option value="placement">
+                        Hardest first
+                    </option>
+
+                    <option value="points">
+                        Most points
+                    </option>
+
+                    <option value="name">
+                        Name
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            id="demons"
+            class="demons-list"
+        >
+
+            <div class="loading">
+
+                <div class="loader"></div>
+
+                Loading demons...
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     PROFILE MODAL
+========================================================= -->
+
+<div
+    id="profile-modal"
+    class="modal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal-backdrop"
+        onclick="closeProfile()"
+    ></div>
+
+
+    <div class="profile-modal">
+
+        <button
+            class="modal-close"
+            onclick="closeProfile()"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <div id="profile-content">
+
+            <div class="loading">
+
+                <div class="loader"></div>
+
+                Loading profile...
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* ============================================================
+   GLOBAL STATE
+============================================================ */
+
+let database = null;
+
+let players = [];
+
+let allDemons = [];
+
+let currentPlayer = null;
+
+
+
+/* ============================================================
+   COUNTRY FLAGS
+============================================================ */
+
+const countryFlags = {
+
+    "Russia": "🇷🇺",
+    "Belarus": "🇧🇾",
+    "Ukraine": "🇺🇦",
+    "Germany": "🇩🇪",
+    "Moldova": "🇲🇩",
+    "India": "🇮🇳",
+    "Kazakhstan": "🇰🇿",
+
+    "United States": "🇺🇸",
+    "United Kingdom": "🇬🇧",
+    "France": "🇫🇷",
+    "Poland": "🇵🇱",
+    "Spain": "🇪🇸",
+    "Brazil": "🇧🇷",
+    "Canada": "🇨🇦",
+    "Australia": "🇦🇺",
+
+    "Netherlands": "🇳🇱",
+    "Sweden": "🇸🇪",
+    "Norway": "🇳🇴",
+    "Finland": "🇫🇮",
+    "Denmark": "🇩🇰",
+
+    "Italy": "🇮🇹",
+    "Japan": "🇯🇵",
+    "South Korea": "🇰🇷",
+    "China": "🇨🇳",
+
+    "Mexico": "🇲🇽",
+    "Argentina": "🇦🇷",
+    "Chile": "🇨🇱",
+
+    "Turkey": "🇹🇷",
+    "Czech Republic": "🇨🇿",
+    "Romania": "🇷🇴",
+    "Hungary": "🇭🇺",
+
+    "Portugal": "🇵🇹",
+    "Belgium": "🇧🇪",
+    "Austria": "🇦🇹",
+    "Switzerland": "🇨🇭",
+
+    "Unknown": "🌐"
+
+};
+
+
+function flag(country) {
+
+    return countryFlags[country] || "🌐";
+
 }
 
 
-session = requests.Session()
 
-session.headers.update({
-    "User-Agent": "GlobalDemonlistPlayerTracker/1.0"
-})
+/* ============================================================
+   UTILITIES
+============================================================ */
 
+function escapeHTML(value) {
 
-def request_json(url, params):
+    if (value === null || value === undefined) {
+        return "";
+    }
 
-    response = session.get(
-        url,
-        params=params,
-        timeout=30
-    )
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
 
-    response.raise_for_status()
-
-    result = response.json()
-
-    if result.get("message") != "success":
-        raise RuntimeError(
-            f"API returned: {result.get('message')}"
-        )
-
-    return result["data"]
+}
 
 
-def get_player(user_id):
 
-    return request_json(
-        USER_API,
+function formatPoints(value) {
+
+    if (
+        value === null ||
+        value === undefined ||
+        Number.isNaN(Number(value))
+    ) {
+        return "0.00";
+    }
+
+    return Number(value).toLocaleString(
+        undefined,
         {
-            "id": user_id
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
         }
-    )
+    );
+
+}
 
 
-def get_records(user_id):
 
-    records = []
+function formatNumber(value) {
 
-    offset = 0
-    limit = 50
+    return Number(value || 0).toLocaleString();
 
-    while True:
-
-        data = request_json(
-            RECORD_API,
-            {
-                "user_id": user_id,
-                "limit": limit,
-                "offset": offset
-            }
-        )
-
-        page = data.get("records", [])
-
-        records.extend(page)
-
-        total = data.get(
-            "total_count",
-            len(records)
-        )
-
-        if len(records) >= total:
-            break
-
-        if not page:
-            break
-
-        offset += limit
-
-        time.sleep(0.1)
-
-    return records
+}
 
 
-def get_level(level_id):
 
-    try:
+/* ============================================================
+   LOAD DATA
+============================================================ */
 
-        return request_json(
-            LEVEL_API,
-            {
-                "id": level_id
-            }
-        )
+async function loadData() {
 
-    except Exception as error:
+    try {
 
-        print(
-            f"      Could not fetch level "
-            f"{level_id}: {error}"
-        )
-
-        return None
+        const response =
+            await fetch(
+                `data/players.json?t=${Date.now()}`
+            );
 
 
-def clean_level(record):
+        if (!response.ok) {
+            throw new Error(
+                "Could not load players.json"
+            );
+        }
 
-    level = record.get("level") or {}
 
-    level_id = level.get("id")
+        database =
+            await response.json();
 
-    detailed = None
 
-    if level_id:
-        detailed = get_level(level_id)
+        players =
+            Object.values(
+                database.players || {}
+            );
 
-    if detailed:
 
-        level_name = detailed.get(
-            "name",
-            level.get("name")
-        )
+        prepareDemons();
 
-        placement = detailed.get(
-            "placement",
-            level.get("placement")
-        )
+        renderPlayers();
 
-        points = detailed.get("points")
+        renderDemons();
 
-        ingame_id = detailed.get(
-            "ingame_id"
-        )
+        updateStats();
 
-        creator = detailed.get(
-            "creator"
-        )
+        updateTimestamp();
 
-        holder = detailed.get(
-            "holder"
-        )
 
-        verification_url = (
-            detailed
-            .get("verification", {})
-            .get("video_url")
-        )
+    } catch (error) {
 
-    else:
+        console.error(error);
 
-        level_name = level.get("name")
-        placement = level.get("placement")
-        points = None
-        ingame_id = None
-        creator = None
-        holder = None
-        verification_url = None
+        document.getElementById(
+            "players"
+        ).innerHTML = `
 
-    return {
+            <div class="error-box">
 
-        "id": level_id,
+                <div class="error-icon">
+                    !
+                </div>
 
-        "ingame_id": ingame_id,
+                <h3>
+                    Could not load data
+                </h3>
 
-        "name": level_name,
+                <p>
+                    Make sure
+                    <code>data/players.json</code>
+                    exists and GitHub Pages is serving
+                    the repository correctly.
+                </p>
 
-        "placement": placement,
+            </div>
 
-        "points": points,
-
-        "creator": creator,
-
-        "holder": holder,
-
-        "verification_url": verification_url,
-
-        "level_url": (
-            f"https://demonlist.org/classic/{level_id}"
-            if level_id
-            else None
-        ),
-
-        "video_url": record.get(
-            "video_url"
-        ),
-
-        "percent": record.get(
-            "percent"
-        ),
-
-        "status": record.get(
-            "status"
-        )
+        `;
 
     }
 
+}
 
-def main():
 
-    players = {}
 
-    print("Updating Global Demonlist...")
-    print()
+/* ============================================================
+   PREPARE DEMON LIST
+============================================================ */
 
-    for expected_name, user_id in PLAYERS.items():
+function prepareDemons() {
 
-        print(
-            f"Fetching {expected_name} "
-            f"(ID: {user_id})..."
-        )
+    const map = new Map();
 
-        try:
 
-            profile = get_player(user_id)
+    players.forEach(player => {
 
-            raw_records = get_records(user_id)
+        const levels =
+            player.completed_levels || [];
 
-            completed_records = [
-                record
-                for record in raw_records
-                if (
-                    record.get("percent") == 100
-                    and record.get("status") == "accepted"
+
+        levels.forEach(level => {
+
+            if (!level || !level.id) {
+                return;
+            }
+
+
+            const key =
+                String(level.id);
+
+
+            if (!map.has(key)) {
+
+                map.set(key, {
+
+                    ...level,
+
+                    players: []
+
+                });
+
+            }
+
+
+            const demon =
+                map.get(key);
+
+
+            if (
+                !demon.players.some(
+                    p =>
+                        p.id === player.id
                 )
-            ]
+            ) {
 
-            print(
-                f"  Found "
-                f"{len(completed_records)} "
-                f"completed levels"
-            )
+                demon.players.push({
 
-            completed_levels = []
+                    id: player.id,
 
-            for record in completed_records:
+                    username:
+                        player.username,
 
-                level = clean_level(record)
+                    country:
+                        player.country
 
-                completed_levels.append(level)
-
-                time.sleep(0.08)
-
-            points = profile.get("points")
-
-            if points is not None:
-                points = float(points)
-
-            players[expected_name] = {
-
-                "id": user_id,
-
-                "username": profile.get(
-                    "username"
-                ),
-
-                # Global Demonlist placement
-                "global_placement": profile.get(
-                    "placement"
-                ),
-
-                "points": points,
-
-                "country": profile.get(
-                    "country"
-                ),
-
-                "badge": profile.get(
-                    "badge"
-                ),
-
-                "is_banned": profile.get(
-                    "is_banned"
-                ),
-
-                "completed_levels":
-                    completed_levels
+                });
 
             }
 
-            print(
-                f"  Global: "
-                f"#{profile.get('placement')} | "
-                f"{points} points"
+        });
+
+    });
+
+
+    allDemons =
+        Array.from(map.values());
+
+
+    allDemons.sort(
+        (a, b) =>
+            (a.placement || Infinity) -
+            (b.placement || Infinity)
+    );
+
+}
+
+
+
+/* ============================================================
+   STATS
+============================================================ */
+
+function updateStats() {
+
+    const totalPoints =
+        players.reduce(
+            (sum, player) =>
+                sum + Number(
+                    player.points || 0
+                ),
+            0
+        );
+
+
+    document.getElementById(
+        "hero-player-count"
+    ).textContent =
+        formatNumber(players.length);
+
+
+    document.getElementById(
+        "hero-demon-count"
+    ).textContent =
+        formatNumber(allDemons.length);
+
+
+    document.getElementById(
+        "hero-total-points"
+    ).textContent =
+        formatPoints(totalPoints);
+
+
+    document.getElementById(
+        "demonlist-count"
+    ).textContent =
+        formatNumber(allDemons.length);
+
+}
+
+
+
+/* ============================================================
+   TIMESTAMP
+============================================================ */
+
+function updateTimestamp() {
+
+    if (!database?.updated_at) {
+        return;
+    }
+
+
+    const date =
+        new Date(
+            database.updated_at
+        );
+
+
+    document.getElementById(
+        "updated"
+    ).textContent =
+        "Updated " +
+        date.toLocaleString(
+            undefined,
+            {
+                dateStyle: "medium",
+                timeStyle: "short"
+            }
+        );
+
+}
+
+
+
+/* ============================================================
+   PLAYER RANKINGS
+============================================================ */
+
+function getPlayerRanking() {
+
+    return [...players].sort(
+        (a, b) =>
+            Number(b.points || 0) -
+            Number(a.points || 0)
+    );
+
+}
+
+
+
+function getTrackedRank(player) {
+
+    const ranking =
+        getPlayerRanking();
+
+
+    const index =
+        ranking.findIndex(
+            p =>
+                p.id === player.id
+        );
+
+
+    return index + 1;
+
+}
+
+
+
+/* ============================================================
+   RENDER PLAYERS
+============================================================ */
+
+function renderPlayers() {
+
+    const container =
+        document.getElementById(
+            "players"
+        );
+
+
+    const query =
+        document
+            .getElementById(
+                "player-search"
             )
+            .value
+            .toLowerCase()
+            .trim();
 
-        except Exception as error:
 
-            print(
-                f"  ERROR: {error}"
-            )
+    const sort =
+        document.getElementById(
+            "player-sort"
+        ).value;
 
-            players[expected_name] = {
 
-                "id": user_id,
+    let filtered =
+        players.filter(
+            player => {
 
-                "username": expected_name,
+                return (
 
-                "global_placement": None,
+                    String(
+                        player.username || ""
+                    )
+                    .toLowerCase()
+                    .includes(query)
 
-                "points": None,
+                    ||
 
-                "country": None,
+                    String(
+                        player.country || ""
+                    )
+                    .toLowerCase()
+                    .includes(query)
 
-                "badge": None,
+                );
 
-                "is_banned": None,
+            }
+        );
 
-                "completed_levels": [],
 
-                "error": str(error)
+    filtered.sort(
+        (a, b) => {
+
+            if (sort === "global") {
+
+                return (
+                    (a.global_placement || Infinity) -
+                    (b.global_placement || Infinity)
+                );
 
             }
 
-        print()
 
-        time.sleep(0.2)
+            if (sort === "completed") {
 
-    output = {
+                return (
+                    (b.completed_levels?.length || 0) -
+                    (a.completed_levels?.length || 0)
+                );
 
-        "updated_at":
-            datetime.now(
-                timezone.utc
-            ).isoformat(),
+            }
 
-        "players": players
+
+            if (sort === "name") {
+
+                return String(
+                    a.username || ""
+                ).localeCompare(
+                    String(
+                        b.username || ""
+                    )
+                );
+
+            }
+
+
+            return (
+                Number(b.points || 0) -
+                Number(a.points || 0)
+            );
+
+        }
+    );
+
+
+    if (!filtered.length) {
+
+        container.innerHTML = `
+
+            <div class="empty-box">
+
+                <div>
+                    ◌
+                </div>
+
+                <h3>
+                    No players found
+                </h3>
+
+                <p>
+                    Try another search.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
 
     }
 
-    OUTPUT_FILE.parent.mkdir(
-        parents=True,
-        exist_ok=True
+
+    container.innerHTML =
+        filtered.map(
+            player => {
+
+                const rank =
+                    getTrackedRank(
+                        player
+                    );
+
+
+                const levels =
+                    player.completed_levels ||
+                    [];
+
+
+                const initials =
+                    String(
+                        player.username || "?"
+                    )
+                    .slice(0, 2)
+                    .toUpperCase();
+
+
+                const medal =
+                    rank === 1
+                    ? "gold"
+                    : rank === 2
+                    ? "silver"
+                    : rank === 3
+                    ? "bronze"
+                    : "";
+
+
+                return `
+
+                    <article
+                        class="player-card ${medal}"
+                    >
+
+                        <div class="rank-column">
+
+                            <div class="rank-number">
+                                #${rank}
+                            </div>
+
+                            ${
+                                rank <= 3
+                                ?
+                                `
+                                    <div class="rank-medal">
+                                        ${
+                                            rank === 1
+                                            ? "♛"
+                                            : rank === 2
+                                            ? "◆"
+                                            : "◇"
+                                        }
+                                    </div>
+                                `
+                                :
+                                ""
+                            }
+
+                        </div>
+
+
+                        <div class="player-main">
+
+                            <div class="avatar">
+
+                                ${escapeHTML(
+                                    initials
+                                )}
+
+                            </div>
+
+
+                            <div class="player-info">
+
+                                <h3>
+                                    ${escapeHTML(
+                                        player.username
+                                    )}
+                                </h3>
+
+
+                                <div class="player-sub">
+
+                                    <span class="country-flag">
+
+                                        ${flag(
+                                            player.country
+                                        )}
+
+                                    </span>
+
+
+                                    <span>
+
+                                        ${escapeHTML(
+                                            player.country ||
+                                            "Unknown"
+                                        )}
+
+                                    </span>
+
+
+                                    <span class="separator">
+                                        ·
+                                    </span>
+
+
+                                    <span class="global-rank">
+
+                                        Global #${
+                                            player.global_placement ??
+                                            "—"
+                                        }
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="player-stat">
+
+                            <span>
+                                POINTS
+                            </span>
+
+                            <strong>
+                                ${formatPoints(
+                                    player.points
+                                )}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="player-stat">
+
+                            <span>
+                                COMPLETED
+                            </span>
+
+                            <strong>
+                                ${formatNumber(
+                                    levels.length
+                                )}
+                            </strong>
+
+                        </div>
+
+
+                        <button
+                            class="profile-button"
+                            onclick="openProfile(${Number(player.id)})"
+                        >
+
+                            Profile
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+                    </article>
+
+                `;
+
+            }
+        ).join("");
+
+}
+
+
+
+/* ============================================================
+   RENDER DEMONS
+============================================================ */
+
+function renderDemons() {
+
+    const container =
+        document.getElementById(
+            "demons"
+        );
+
+
+    const query =
+        document
+            .getElementById(
+                "demon-search"
+            )
+            .value
+            .toLowerCase()
+            .trim();
+
+
+    const sort =
+        document.getElementById(
+            "demon-sort"
+        ).value;
+
+
+    let demons =
+        allDemons.filter(
+            demon =>
+                String(
+                    demon.name || ""
+                )
+                .toLowerCase()
+                .includes(query)
+        );
+
+
+    demons.sort(
+        (a, b) => {
+
+            if (sort === "points") {
+
+                return (
+                    Number(b.points || 0) -
+                    Number(a.points || 0)
+                );
+
+            }
+
+
+            if (sort === "name") {
+
+                return String(
+                    a.name || ""
+                ).localeCompare(
+                    String(
+                        b.name || ""
+                    )
+                );
+
+            }
+
+
+            return (
+                (a.placement || Infinity) -
+                (b.placement || Infinity)
+            );
+
+        }
+    );
+
+
+    if (!demons.length) {
+
+        container.innerHTML = `
+
+            <div class="empty-box">
+
+                <div>
+                    ◌
+                </div>
+
+                <h3>
+                    No demons found
+                </h3>
+
+                <p>
+                    Try another search.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        demons.map(
+            (demon, index) => {
+
+                const playersHtml =
+                    demon.players
+                        .map(
+                            player => `
+
+                                <button
+                                    class="completed-player"
+                                    onclick="openProfile(${Number(player.id)})"
+                                >
+
+                                    <span>
+
+                                        ${flag(
+                                            player.country
+                                        )}
+
+                                    </span>
+
+                                    ${escapeHTML(
+                                        player.username
+                                    )}
+
+                                </button>
+
+                            `
+                        )
+                        .join("");
+
+
+                return `
+
+                    <article
+                        class="demon-card"
+                    >
+
+                        <div class="demon-thumbnail">
+
+                            ${
+                                demon.thumbnail_url
+                                ?
+                                `
+                                    <img
+                                        src="${escapeHTML(
+                                            demon.thumbnail_url
+                                        )}"
+                                        alt=""
+                                        loading="lazy"
+                                    >
+                                `
+                                :
+                                `
+                                    <div class="thumbnail-placeholder">
+
+                                        <span>
+                                            GD
+                                        </span>
+
+                                    </div>
+                                `
+                            }
+
+
+                            <div class="demon-placement">
+
+                                #${
+                                    demon.placement ??
+                                    "—"
+                                }
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="demon-content">
+
+                            <div class="demon-title-row">
+
+                                <div>
+
+                                    <div class="demon-label">
+
+                                        DEMON #${
+                                            demon.placement ??
+                                            "?"
+                                        }
+
+                                    </div>
+
+
+                                    <h3>
+                                        ${escapeHTML(
+                                            demon.name ||
+                                            "Unknown Level"
+                                        )}
+                                    </h3>
+
+                                </div>
+
+
+                                ${
+                                    demon.points !== null &&
+                                    demon.points !== undefined
+                                    ?
+                                    `
+                                        <div class="demon-points">
+
+                                            <strong>
+                                                ${formatPoints(
+                                                    demon.points
+                                                )}
+                                            </strong>
+
+                                            <span>
+                                                points
+                                            </span>
+
+                                        </div>
+                                    `
+                                    :
+                                    ""
+                                }
+
+                            </div>
+
+
+                            <div class="demon-meta">
+
+                                ${
+                                    demon.creator
+                                    ?
+                                    `
+                                        <span>
+                                            by ${escapeHTML(
+                                                demon.creator
+                                            )}
+                                        </span>
+                                    `
+                                    :
+                                    ""
+                                }
+
+
+                                ${
+                                    demon.holder
+                                    ?
+                                    `
+                                        <span>
+                                            Holder:
+                                            ${escapeHTML(
+                                                demon.holder
+                                            )}
+                                        </span>
+                                    `
+                                    :
+                                    ""
+                                }
+
+                            </div>
+
+
+                            <div class="completed-by">
+
+                                <span class="completed-label">
+
+                                    COMPLETED BY
+
+                                </span>
+
+
+                                <div class="completed-players">
+
+                                    ${playersHtml}
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="demon-actions">
+
+                                ${
+                                    demon.level_url
+                                    ?
+                                    `
+                                        <a
+                                            href="${escapeHTML(
+                                                demon.level_url
+                                            )}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Global Demonlist ↗
+                                        </a>
+                                    `
+                                    :
+                                    ""
+                                }
+
+
+                                ${
+                                    demon.verification_url
+                                    ?
+                                    `
+                                        <a
+                                            href="${escapeHTML(
+                                                demon.verification_url
+                                            )}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Verification ↗
+                                        </a>
+                                    `
+                                    :
+                                    ""
+                                }
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                `;
+
+            }
+        ).join("");
+
+}
+
+
+
+/* ============================================================
+   PROFILE
+============================================================ */
+
+function openProfile(id) {
+
+    currentPlayer =
+        players.find(
+            player =>
+                Number(player.id) ===
+                Number(id)
+        );
+
+
+    if (!currentPlayer) {
+        return;
+    }
+
+
+    const modal =
+        document.getElementById(
+            "profile-modal"
+        );
+
+
+    renderProfile();
+
+
+    modal.classList.add(
+        "open"
+    );
+
+
+    modal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "modal-open"
+    );
+
+}
+
+
+
+function closeProfile() {
+
+    const modal =
+        document.getElementById(
+            "profile-modal"
+        );
+
+
+    modal.classList.remove(
+        "open"
+    );
+
+
+    modal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.classList.remove(
+        "modal-open"
+    );
+
+}
+
+
+
+function renderProfile() {
+
+    const player =
+        currentPlayer;
+
+
+    const rank =
+        getTrackedRank(
+            player
+        );
+
+
+    const levels =
+        player.completed_levels ||
+        [];
+
+
+    const sortedLevels =
+        [...levels].sort(
+            (a, b) =>
+                (a.placement || Infinity) -
+                (b.placement || Infinity)
+        );
+
+
+    const hardest =
+        sortedLevels[0];
+
+
+    document.getElementById(
+        "profile-content"
+    ).innerHTML = `
+
+        <div class="profile-header">
+
+            <div class="profile-avatar">
+
+                ${escapeHTML(
+                    String(
+                        player.username || "?"
+                    )
+                    .slice(0, 2)
+                    .toUpperCase()
+                )}
+
+            </div>
+
+
+            <div class="profile-heading">
+
+                <div class="profile-country">
+
+                    <span>
+                        ${flag(
+                            player.country
+                        )}
+                    </span>
+
+                    ${escapeHTML(
+                        player.country ||
+                        "Unknown"
+                    )}
+
+                </div>
+
+
+                <h2>
+                    ${escapeHTML(
+                        player.username
+                    )}
+                </h2>
+
+
+                <div class="profile-global">
+
+                    Global Demonlist #${
+                        player.global_placement ??
+                        "—"
+                    }
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-rank">
+
+                <span>
+                    OUR RANK
+                </span>
+
+                <strong>
+                    #${rank}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="profile-stats">
+
+            <div class="profile-stat-card">
+
+                <span>
+                    POINTS
+                </span>
+
+                <strong>
+                    ${formatPoints(
+                        player.points
+                    )}
+                </strong>
+
+            </div>
+
+
+            <div class="profile-stat-card">
+
+                <span>
+                    COMPLETED
+                </span>
+
+                <strong>
+                    ${formatNumber(
+                        levels.length
+                    )}
+                </strong>
+
+            </div>
+
+
+            <div class="profile-stat-card">
+
+                <span>
+                    HARDEST
+                </span>
+
+                <strong>
+
+                    ${
+                        hardest
+                        ?
+                        `#${hardest.placement || "—"}`
+                        :
+                        "—"
+                    }
+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="profile-section">
+
+            <div class="profile-section-heading">
+
+                <div>
+
+                    <span>
+                        COMPLETIONS
+                    </span>
+
+                    <h3>
+                        Completed Demons
+                    </h3>
+
+                </div>
+
+
+                <span class="completion-count">
+
+                    ${levels.length}
+
+                </span>
+
+            </div>
+
+
+            ${
+                sortedLevels.length
+                ?
+                `
+                    <div class="profile-levels">
+
+                        ${
+                            sortedLevels.map(
+                                level => `
+
+                                    <div class="profile-level">
+
+                                        <div class="profile-level-image">
+
+                                            ${
+                                                level.thumbnail_url
+                                                ?
+                                                `
+                                                    <img
+                                                        src="${escapeHTML(
+                                                            level.thumbnail_url
+                                                        )}"
+                                                        alt=""
+                                                        loading="lazy"
+                                                    >
+                                                `
+                                                :
+                                                `
+                                                    <span>
+                                                        GD
+                                                    </span>
+                                                `
+                                            }
+
+                                        </div>
+
+
+                                        <div class="profile-level-info">
+
+                                            <strong>
+                                                ${escapeHTML(
+                                                    level.name ||
+                                                    "Unknown Level"
+                                                )}
+                                            </strong>
+
+
+                                            <span>
+
+                                                Global #${
+                                                    level.placement ??
+                                                    "—"
+                                                }
+
+                                                ${
+                                                    level.points !== null &&
+                                                    level.points !== undefined
+                                                    ?
+                                                    ` · ${formatPoints(
+                                                        level.points
+                                                    )} pts`
+                                                    :
+                                                    ""
+                                                }
+
+                                            </span>
+
+                                        </div>
+
+
+                                        <div class="profile-level-links">
+
+                                            ${
+                                                level.level_url
+                                                ?
+                                                `
+                                                    <a
+                                                        href="${escapeHTML(
+                                                            level.level_url
+                                                        )}"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        ↗
+                                                    </a>
+                                                `
+                                                :
+                                                ""
+                                            }
+
+                                        </div>
+
+                                    </div>
+
+                                `
+                            ).join("")
+                        }
+
+                    </div>
+                `
+                :
+                `
+                    <div class="no-completions">
+
+                        No completed demons found.
+
+                    </div>
+                `
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* ============================================================
+   TABS
+============================================================ */
+
+function showTab(tab) {
+
+    document
+        .querySelectorAll(".tab")
+        .forEach(button => {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.tab === tab
+            );
+
+        });
+
+
+    document
+        .querySelectorAll(".tab-content")
+        .forEach(section => {
+
+            section.classList.remove(
+                "active"
+            );
+
+        });
+
+
+    document
+        .getElementById(
+            tab + "-tab"
+        )
+        .classList.add(
+            "active"
+        );
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+
+/* ============================================================
+   SEARCH EVENTS
+============================================================ */
+
+document
+    .getElementById(
+        "player-search"
     )
+    .addEventListener(
+        "input",
+        renderPlayers
+    );
 
-    OUTPUT_FILE.write_text(
-        json.dumps(
-            output,
-            ensure_ascii=False,
-            indent=2
-        ),
-        encoding="utf-8"
+
+document
+    .getElementById(
+        "player-sort"
     )
+    .addEventListener(
+        "change",
+        renderPlayers
+    );
 
-    print(
-        f"Finished! Saved to "
-        f"{OUTPUT_FILE}"
+
+document
+    .getElementById(
+        "demon-search"
     )
+    .addEventListener(
+        "input",
+        renderDemons
+    );
 
 
-if __name__ == "__main__":
-    main()
+document
+    .getElementById(
+        "demon-sort"
+    )
+    .addEventListener(
+        "change",
+        renderDemons
+    );
+
+
+
+/* ============================================================
+   KEYBOARD SHORTCUTS
+============================================================ */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "/" &&
+            document.activeElement.tagName !==
+            "INPUT"
+        ) {
+
+            event.preventDefault();
+
+            document
+                .getElementById(
+                    "player-search"
+                )
+                .focus();
+
+        }
+
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeProfile();
+
+        }
+
+    }
+);
+
+
+
+/* ============================================================
+   START
+============================================================ */
+
+loadData();
+
+</script>
+
+</body>
+
+</html>
