@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Global Demonlist Players</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Global Demonlist Players</h1>
+
+    <p id="updated">Loading...</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Flag</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+
+        <tbody id="players">
+        </tbody>
+    </table>
+
+    <script>
+
+        function flagEmoji(countryCode) {
+            if (!countryCode) {
+                return "🏳️";
+            }
+
+            return countryCode
+                .toUpperCase()
+                .split("")
+                .map(letter =>
+                    String.fromCodePoint(
+                        127397 + letter.charCodeAt(0)
+                    )
+                )
+                .join("");
+        }
+
+
+        async function loadPlayers() {
+
+            const response = await fetch(
+                "data/players.json?" + Date.now()
+            );
+
+            const data = await response.json();
+
+            document.getElementById("updated").textContent =
+                "Last updated: " +
+                new Date(data.updated_at).toLocaleString();
+
+
+            const tbody =
+                document.getElementById("players");
+
+            tbody.innerHTML = "";
+
+
+            for (const [name, player] of Object.entries(data.players)) {
+
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${name}</td>
+
+                    <td>
+                        ${flagEmoji(player.flag)}
+                    </td>
+
+                    <td>
+                        ${player.points ?? "N/A"}
+                    </td>
+                `;
+
+                tbody.appendChild(row);
+            }
+        }
+
+
+        loadPlayers();
+
+    </script>
+
+</body>
+</html>
