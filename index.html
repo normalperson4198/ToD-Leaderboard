@@ -1,1039 +1,394 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>ToD Players</title>
-
-    <link rel="stylesheet" href="style.css">
-
-</head>
-
-
-<body>
-
-<div class="background-glow glow-one"></div>
-<div class="background-glow glow-two"></div>
-
-
-<header class="site-header">
-
-    <div class="header-inner">
-
-        <div class="brand">
-
-            <div class="brand-icon">
-                GD
-            </div>
-
-            <div>
-
-                <h1>ToD Leaderboard</h1>
-
-                <span>
-                    Player Tracker
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="last-updated"
-            id="updated"
-        >
-            Loading...
-        </div>
-
-    </div>
-
-</header>
-
-
-<main class="container">
-
-
-    <section class="hero">
-
-        <div>
-
-            <div class="eyebrow">
-                PLAYER DATABASE
-            </div>
-
-            <h2>
-                Track your favorite players.
-            </h2>
-
-            <p>
-                Explore placements, points,
-                countries and completed levels.
-            </p>
-
-        </div>
-
-
-        <div class="hero-stats">
-
-            <div class="stat">
-
-                <strong id="player-count">
-                    —
-                </strong>
-
-                <span>
-                    Players
-                </span>
-
-            </div>
-
-
-            <div class="stat">
-
-                <strong id="total-points">
-                    —
-                </strong>
-
-                <span>
-                    Combined Points
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="toolbar">
-
-        <div class="search-wrapper">
-
-            <span class="search-icon">
-                ⌕
-            </span>
-
-            <input
-                id="search"
-                type="search"
-                placeholder="Search players..."
-                autocomplete="off"
-            >
-
-        </div>
-
-
-        <select id="sort">
-
-            <option value="placement">
-                Placement
-            </option>
-
-            <option value="points">
-                Points
-            </option>
-
-            <option value="name">
-                Name
-            </option>
-
-        </select>
-
-    </section>
-
-
-    <section
-        class="players-grid"
-        id="players"
-    >
-
-        <div class="loading">
-
-            <div class="spinner"></div>
-
-            Loading players...
-
-        </div>
-
-    </section>
-
-
-</main>
-
-
-<!-- PROFILE MODAL -->
-
-<div
-    class="modal"
-    id="profile-modal"
->
-
-    <div
-        class="modal-backdrop"
-        id="modal-backdrop"
-    ></div>
-
-
-    <div class="profile-panel">
-
-        <button
-            class="close-button"
-            id="close-modal"
-            aria-label="Close"
-        >
-            ×
-        </button>
-
-
-        <div
-            class="profile-header"
-            id="profile-header"
-        >
-
-            <!-- Filled by JavaScript -->
-
-        </div>
-
-
-        <div
-            class="profile-stats"
-            id="profile-stats"
-        >
-
-            <!-- Filled by JavaScript -->
-
-        </div>
-
-
-        <div class="levels-section">
-
-            <div class="levels-heading">
-
-                <div>
-
-                    <span class="section-label">
-                        COMPLETIONS
-                    </span>
-
-                    <h3>
-                        Completed Levels
-                    </h3>
-
-                </div>
-
-
-                <span
-                    class="completion-count"
-                    id="completion-count"
-                >
-                    0
-                </span>
-
-            </div>
-
-
-            <div class="level-search">
-
-                <input
-                    id="level-search"
-                    type="search"
-                    placeholder="Search completed levels..."
-                >
-
-            </div>
-
-
-            <div
-                class="levels-list"
-                id="levels-list"
-            >
-
-                <!-- Filled by JavaScript -->
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<script>
-
-let database = null;
-let players = [];
-let currentPlayer = null;
-
-
-const countryFlags = {
-
-    "Russia": "🇷🇺",
-    "Belarus": "🇧🇾",
-    "Ukraine": "🇺🇦",
-    "Germany": "🇩🇪",
-    "Moldova": "🇲🇩",
-    "India": "🇮🇳",
-    "Kazakhstan": "🇰🇿",
-    "United States": "🇺🇸",
-    "United Kingdom": "🇬🇧",
-    "France": "🇫🇷",
-    "Poland": "🇵🇱",
-    "Spain": "🇪🇸",
-    "Brazil": "🇧🇷",
-    "Canada": "🇨🇦",
-    "Australia": "🇦🇺",
-    "Netherlands": "🇳🇱",
-    "Sweden": "🇸🇪",
-    "Norway": "🇳🇴",
-    "Finland": "🇫🇮",
-    "Denmark": "🇩🇰",
-    "Italy": "🇮🇹",
-    "Japan": "🇯🇵",
-    "South Korea": "🇰🇷",
-    "China": "🇨🇳",
-    "Mexico": "🇲🇽",
-    "Argentina": "🇦🇷",
-    "Chile": "🇨🇱",
-    "Turkey": "🇹🇷",
-    "Czech Republic": "🇨🇿",
-    "Romania": "🇷🇴",
-    "Hungary": "🇭🇺",
-    "Portugal": "🇵🇹",
-    "Belgium": "🇧🇪",
-    "Austria": "🇦🇹",
-    "Switzerland": "🇨🇭",
-    "Unknown": "🌐"
-};
-
-
-function flag(country) {
-
-    return countryFlags[country] || "🌐";
-
+import json
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+import requests
+
+
+API_BASE = "https://api.demonlist.org"
+
+USER_API = f"{API_BASE}/user/get"
+RECORD_API = f"{API_BASE}/user/record/list"
+LEVEL_API = f"{API_BASE}/level/classic/getCache"
+
+OUTPUT_FILE = Path("data/players.json")
+
+
+PLAYERS = {
+    "went1xgmd": 38987,
+    "Magnum": 18356,
+    "Zafsa": 18651,
+    "Vanchos": 18210,
+    "Фанат Абстракта": 951,
+    "arslnxx": 19027,
+    "SashaKray": 7560,
+    "Amabest": 29826,
+    "LoyalVladik": 21713,
+    "egyssgd": 31906,
+    "Velance": 24510,
+    "ferux": 33994,
+    "Mateex": 6053,
+    "forewad": 21129,
+    "CosmoReator": 24070,
+    "noN2me": 28295,
+    "M Ok You": 41742,
+    "mirageee": 28256,
+    "Stylish": 2629,
+    "meyv": 37330,
+    "Redis_GD435": 21222,
+    "Kinoxas": 26120,
+    "clandd": 29605,
+    "Skraity": 28896,
+    "StintlerGD": 18689,
+    "z0n1x": 26345,
+    "Tanker674": 26186,
+    "Paberik": 31056,
+    "JabkaGD": 3912,
+    "n0rmalGD": 29533,
 }
 
 
-function escapeHTML(value) {
+session = requests.Session()
 
-    if (value === null || value === undefined) {
-        return "";
-    }
-
-    return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-
-}
+session.headers.update({
+    "User-Agent": "GlobalDemonlistPlayerTracker/1.0"
+})
 
 
-function formatPoints(points) {
+def request_json(url, params):
 
-    if (
-        points === null ||
-        points === undefined
-    ) {
-        return "—";
-    }
+    response = session.get(
+        url,
+        params=params,
+        timeout=30
+    )
 
-    return Number(points).toLocaleString(
-        undefined,
+    response.raise_for_status()
+
+    result = response.json()
+
+    if result.get("message") != "success":
+        raise RuntimeError(
+            f"API returned: {result.get('message')}"
+        )
+
+    return result["data"]
+
+
+def get_player(user_id):
+
+    return request_json(
+        USER_API,
         {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
+            "id": user_id
         }
-    );
+    )
 
-}
 
+def get_records(user_id):
 
-function badgeName(badge) {
+    records = []
 
-    const names = {
+    offset = 0
+    limit = 50
 
-        pc: "PC",
-        mobile: "Mobile",
-        former_cheater: "Former Cheater",
-        contributor: "Contributor"
+    while True:
 
-    };
-
-    return names[badge] || badge || "Player";
-
-}
-
-
-function renderPlayers() {
-
-    const container =
-        document.getElementById("players");
-
-    const search =
-        document
-            .getElementById("search")
-            .value
-            .toLowerCase()
-            .trim();
-
-    const sort =
-        document
-            .getElementById("sort")
-            .value;
-
-
-    let filtered = players.filter(player => {
-
-        return (
-            player.username
-                .toLowerCase()
-                .includes(search)
-            ||
-            (player.country || "")
-                .toLowerCase()
-                .includes(search)
-        );
-
-    });
-
-
-    filtered.sort((a, b) => {
-
-        if (sort === "name") {
-
-            return a.username.localeCompare(
-                b.username
-            );
-
-        }
-
-
-        if (sort === "points") {
-
-            return (
-                (b.points || 0) -
-                (a.points || 0)
-            );
-
-        }
-
-
-        return (
-            (a.placement || Infinity) -
-            (b.placement || Infinity)
-        );
-
-    });
-
-
-    if (!filtered.length) {
-
-        container.innerHTML = `
-            <div class="empty">
-                No players found.
-            </div>
-        `;
-
-        return;
-
-    }
-
-
-    container.innerHTML =
-        filtered.map(player => {
-
-            const banned =
-                player.is_banned
-                    ? "banned"
-                    : "";
-
-
-            return `
-
-                <article
-                    class="player-card ${banned}"
-                    data-id="${player.id}"
-                >
-
-                    <div class="card-top">
-
-                        <div class="placement">
-
-                            <span>#</span>
-
-                            ${
-                                player.placement ??
-                                "—"
-                            }
-
-                        </div>
-
-
-                        <div class="country">
-
-                            ${flag(player.country)}
-
-                            ${
-                                escapeHTML(
-                                    player.country ||
-                                    "Unknown"
-                                )
-                            }
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="player-main">
-
-                        <div class="avatar">
-
-                            ${escapeHTML(
-                                player.username
-                                    .charAt(0)
-                                    .toUpperCase()
-                            )}
-
-                        </div>
-
-
-                        <div class="player-name">
-
-                            <h3>
-                                ${escapeHTML(
-                                    player.username
-                                )}
-                            </h3>
-
-                            <span>
-                                ${badgeName(
-                                    player.badge
-                                )}
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="card-bottom">
-
-                        <div>
-
-                            <span>
-                                POINTS
-                            </span>
-
-                            <strong>
-                                ${formatPoints(
-                                    player.points
-                                )}
-                            </strong>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-                                COMPLETED
-                            </span>
-
-                            <strong>
-                                ${
-                                    player.completed_levels
-                                        ? player.completed_levels.length
-                                        : 0
-                                }
-                            </strong>
-
-                        </div>
-
-
-                        <button
-                            class="profile-button"
-                            onclick="openProfile(${player.id})"
-                        >
-                            View Profile
-                            <span>→</span>
-                        </button>
-
-                    </div>
-
-                </article>
-
-            `;
-
-        }).join("");
-
-}
-
-
-function openProfile(id) {
-
-    currentPlayer =
-        players.find(
-            player =>
-                Number(player.id) === Number(id)
-        );
-
-
-    if (!currentPlayer) {
-        return;
-    }
-
-
-    const modal =
-        document.getElementById(
-            "profile-modal"
-        );
-
-
-    const completed =
-        currentPlayer.completed_levels ||
-        [];
-
-
-    document.getElementById(
-        "profile-header"
-    ).innerHTML = `
-
-        <div class="profile-avatar">
-
-            ${escapeHTML(
-                currentPlayer.username
-                    .charAt(0)
-                    .toUpperCase()
-            )}
-
-        </div>
-
-
-        <div class="profile-title">
-
-            <div class="profile-name-row">
-
-                <h2>
-                    ${escapeHTML(
-                        currentPlayer.username
-                    )}
-                </h2>
-
-                ${
-                    currentPlayer.is_banned
-                    ? `
-                        <span class="banned-badge">
-                            BANNED
-                        </span>
-                    `
-                    : ""
-                }
-
-            </div>
-
-
-            <p>
-
-                ${flag(currentPlayer.country)}
-
-                ${
-                    escapeHTML(
-                        currentPlayer.country ||
-                        "Unknown"
-                    )
-                }
-
-                ·
-
-                ${badgeName(
-                    currentPlayer.badge
-                )}
-
-            </p>
-
-        </div>
-
-    `;
-
-
-    document.getElementById(
-        "profile-stats"
-    ).innerHTML = `
-
-        <div class="profile-stat">
-
-            <span>GLOBAL RANK</span>
-
-            <strong>
-                #${currentPlayer.placement ?? "—"}
-            </strong>
-
-        </div>
-
-
-        <div class="profile-stat">
-
-            <span>POINTS</span>
-
-            <strong>
-                ${formatPoints(
-                    currentPlayer.points
-                )}
-            </strong>
-
-        </div>
-
-
-        <div class="profile-stat">
-
-            <span>COMPLETED</span>
-
-            <strong>
-                ${completed.length}
-            </strong>
-
-        </div>
-
-    `;
-
-
-    document.getElementById(
-        "completion-count"
-    ).textContent =
-        completed.length;
-
-
-    document.getElementById(
-        "level-search"
-    ).value = "";
-
-
-    renderLevels();
-
-
-    modal.classList.add("open");
-
-    document.body.classList.add(
-        "modal-open"
-    );
-
-}
-
-
-function renderLevels() {
-
-    if (!currentPlayer) {
-        return;
-    }
-
-
-    const search =
-        document
-            .getElementById("level-search")
-            .value
-            .toLowerCase()
-            .trim();
-
-
-    const completed =
-        currentPlayer.completed_levels ||
-        [];
-
-
-    const filtered =
-        completed.filter(record => {
-
-            const level =
-                record.level || {};
-
-
-            return (
-                (level.name || "")
-                    .toLowerCase()
-                    .includes(search)
-            );
-
-        });
-
-
-    const container =
-        document.getElementById(
-            "levels-list"
-        );
-
-
-    if (!filtered.length) {
-
-        container.innerHTML = `
-
-            <div class="empty-levels">
-
-                ${
-                    completed.length
-                    ? "No matching levels."
-                    : "No completed levels found."
-                }
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    container.innerHTML =
-        filtered.map(record => {
-
-            const level =
-                record.level || {};
-
-
-            return `
-
-                <div class="level-row">
-
-                    <div class="level-placement">
-
-                        #${
-                            level.placement ??
-                            "—"
-                        }
-
-                    </div>
-
-
-                    <div class="level-info">
-
-                        <strong>
-                            ${escapeHTML(
-                                level.name ||
-                                "Unknown Level"
-                            )}
-                        </strong>
-
-                        <span>
-                            Level ID:
-                            ${
-                                level.id ??
-                                "—"
-                            }
-                        </span>
-
-                    </div>
-
-
-                    <div class="level-actions">
-
-                        <span class="accepted">
-                            ✓ 100%
-                        </span>
-
-                        ${
-                            record.video_url
-                            ? `
-                                <a
-                                    href="${escapeHTML(
-                                        record.video_url
-                                    )}"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="video-link"
-                                >
-                                    Video ↗
-                                </a>
-                            `
-                            : ""
-                        }
-
-                    </div>
-
-                </div>
-
-            `;
-
-        }).join("");
-
-}
-
-
-function closeProfile() {
-
-    document
-        .getElementById("profile-modal")
-        .classList.remove("open");
-
-    document.body.classList.remove(
-        "modal-open"
-    );
-
-    currentPlayer = null;
-
-}
-
-
-async function loadDatabase() {
-
-    const response =
-        await fetch(
-            "data/players.json?" +
-            Date.now()
-        );
-
-
-    if (!response.ok) {
-
-        throw new Error(
-            "Could not load players.json"
-        );
-
-    }
-
-
-    database =
-        await response.json();
-
-
-    players =
-        Object.values(
-            database.players
-        );
-
-
-    document.getElementById(
-        "player-count"
-    ).textContent =
-        players.length;
-
-
-    const totalPoints =
-        players.reduce(
-            (sum, player) =>
-                sum +
-                Number(player.points || 0),
-            0
-        );
-
-
-    document.getElementById(
-        "total-points"
-    ).textContent =
-        totalPoints.toLocaleString(
-            undefined,
+        data = request_json(
+            RECORD_API,
             {
-                maximumFractionDigits: 2
+                "user_id": user_id,
+                "limit": limit,
+                "offset": offset
             }
-        );
+        )
+
+        page = data.get("records", [])
+
+        records.extend(page)
+
+        total = data.get(
+            "total_count",
+            len(records)
+        )
+
+        if len(records) >= total:
+            break
+
+        if not page:
+            break
+
+        offset += limit
+
+        time.sleep(0.1)
+
+    return records
 
 
-    document.getElementById(
-        "updated"
-    ).textContent =
-        "Updated " +
-        new Date(
-            database.updated_at
-        ).toLocaleString();
+def get_level(level_id):
+
+    try:
+
+        return request_json(
+            LEVEL_API,
+            {
+                "id": level_id
+            }
+        )
+
+    except Exception as error:
+
+        print(
+            f"      Could not fetch level "
+            f"{level_id}: {error}"
+        )
+
+        return None
 
 
-    renderPlayers();
+def clean_level(record):
 
-}
+    level = record.get("level") or {}
 
+    level_id = level.get("id")
 
-document
-    .getElementById("search")
-    .addEventListener(
-        "input",
-        renderPlayers
-    );
+    detailed = None
 
+    if level_id:
+        detailed = get_level(level_id)
 
-document
-    .getElementById("sort")
-    .addEventListener(
-        "change",
-        renderPlayers
-    );
+    if detailed:
 
+        level_name = detailed.get(
+            "name",
+            level.get("name")
+        )
 
-document
-    .getElementById("level-search")
-    .addEventListener(
-        "input",
-        renderLevels
-    );
+        placement = detailed.get(
+            "placement",
+            level.get("placement")
+        )
 
+        points = detailed.get("points")
 
-document
-    .getElementById("close-modal")
-    .addEventListener(
-        "click",
-        closeProfile
-    );
+        ingame_id = detailed.get(
+            "ingame_id"
+        )
 
+        creator = detailed.get(
+            "creator"
+        )
 
-document
-    .getElementById("modal-backdrop")
-    .addEventListener(
-        "click",
-        closeProfile
-    );
+        holder = detailed.get(
+            "holder"
+        )
 
+        verification_url = (
+            detailed
+            .get("verification", {})
+            .get("video_url")
+        )
 
-document.addEventListener(
-    "keydown",
-    event => {
+    else:
 
-        if (
-            event.key === "Escape"
-        ) {
+        level_name = level.get("name")
+        placement = level.get("placement")
+        points = None
+        ingame_id = None
+        creator = None
+        holder = None
+        verification_url = None
 
-            closeProfile();
+    return {
 
-        }
+        "id": level_id,
+
+        "ingame_id": ingame_id,
+
+        "name": level_name,
+
+        "placement": placement,
+
+        "points": points,
+
+        "creator": creator,
+
+        "holder": holder,
+
+        "verification_url": verification_url,
+
+        "level_url": (
+            f"https://demonlist.org/classic/{level_id}"
+            if level_id
+            else None
+        ),
+
+        "video_url": record.get(
+            "video_url"
+        ),
+
+        "percent": record.get(
+            "percent"
+        ),
+
+        "status": record.get(
+            "status"
+        )
 
     }
-);
 
 
-loadDatabase().catch(error => {
+def main():
 
-    console.error(error);
+    players = {}
 
-    document.getElementById(
-        "players"
-    ).innerHTML = `
+    print("Updating Global Demonlist...")
+    print()
 
-        <div class="error">
+    for expected_name, user_id in PLAYERS.items():
 
-            Failed to load player data.
+        print(
+            f"Fetching {expected_name} "
+            f"(ID: {user_id})..."
+        )
 
-            <br>
+        try:
 
-            ${escapeHTML(
-                error.message
-            )}
+            profile = get_player(user_id)
 
-        </div>
+            raw_records = get_records(user_id)
 
-    `;
+            completed_records = [
+                record
+                for record in raw_records
+                if (
+                    record.get("percent") == 100
+                    and record.get("status") == "accepted"
+                )
+            ]
 
-});
+            print(
+                f"  Found "
+                f"{len(completed_records)} "
+                f"completed levels"
+            )
 
-</script>
+            completed_levels = []
 
-</body>
+            for record in completed_records:
 
-</html>
+                level = clean_level(record)
+
+                completed_levels.append(level)
+
+                time.sleep(0.08)
+
+            points = profile.get("points")
+
+            if points is not None:
+                points = float(points)
+
+            players[expected_name] = {
+
+                "id": user_id,
+
+                "username": profile.get(
+                    "username"
+                ),
+
+                # Global Demonlist placement
+                "global_placement": profile.get(
+                    "placement"
+                ),
+
+                "points": points,
+
+                "country": profile.get(
+                    "country"
+                ),
+
+                "badge": profile.get(
+                    "badge"
+                ),
+
+                "is_banned": profile.get(
+                    "is_banned"
+                ),
+
+                "completed_levels":
+                    completed_levels
+
+            }
+
+            print(
+                f"  Global: "
+                f"#{profile.get('placement')} | "
+                f"{points} points"
+            )
+
+        except Exception as error:
+
+            print(
+                f"  ERROR: {error}"
+            )
+
+            players[expected_name] = {
+
+                "id": user_id,
+
+                "username": expected_name,
+
+                "global_placement": None,
+
+                "points": None,
+
+                "country": None,
+
+                "badge": None,
+
+                "is_banned": None,
+
+                "completed_levels": [],
+
+                "error": str(error)
+
+            }
+
+        print()
+
+        time.sleep(0.2)
+
+    output = {
+
+        "updated_at":
+            datetime.now(
+                timezone.utc
+            ).isoformat(),
+
+        "players": players
+
+    }
+
+    OUTPUT_FILE.parent.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    OUTPUT_FILE.write_text(
+        json.dumps(
+            output,
+            ensure_ascii=False,
+            indent=2
+        ),
+        encoding="utf-8"
+    )
+
+    print(
+        f"Finished! Saved to "
+        f"{OUTPUT_FILE}"
+    )
+
+
+if __name__ == "__main__":
+    main()
