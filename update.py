@@ -6,11 +6,14 @@ from pathlib import Path
 import requests
 
 
-API_URL = "https://demonlist.org/api/user/getCache"
+# Global Demonlist API
+API_URL = "https://api.demonlist.org/user/get"
 
+# Where the generated data will be saved
 OUTPUT_FILE = Path("data/players.json")
 
 
+# Player username -> Global Demonlist user ID
 PLAYERS = {
     "went1xgmd": 38987,
     "Magnum": 18356,
@@ -46,9 +49,15 @@ PLAYERS = {
 
 
 def get_player(user_id):
+    """
+    Get a player's profile from the Global Demonlist API.
+    """
+
     response = requests.get(
         API_URL,
-        params={"id": user_id},
+        params={
+            "id": user_id
+        },
         timeout=30,
     )
 
@@ -58,20 +67,28 @@ def get_player(user_id):
 
     if result.get("message") != "success":
         raise RuntimeError(
-            f"API returned unexpected response: {result}"
+            f"API returned: {result.get('message')}"
         )
 
     return result["data"]
 
 
 def main():
+
     players = {}
+
+    print("Updating Global Demonlist players...")
+    print()
 
     for expected_name, user_id in PLAYERS.items():
 
-        print(f"Fetching {expected_name} ({user_id})...")
+        print(
+            f"Fetching {expected_name} "
+            f"(ID: {user_id})..."
+        )
 
         try:
+
             data = get_player(user_id)
 
             players[expected_name] = {
@@ -85,14 +102,21 @@ def main():
             }
 
             print(
-                f"  {data.get('username')} | "
+                f"  OK | "
+                f"{data.get('username')} | "
+                f"#{data.get('placement')} | "
                 f"{data.get('points')} points | "
                 f"{data.get('country')}"
             )
 
         except Exception as error:
-            print(f"  ERROR: {error}")
 
+            print(
+                f"  ERROR: {error}"
+            )
+
+            # Keep the player in the JSON even if
+            # the API temporarily fails.
             players[expected_name] = {
                 "id": user_id,
                 "username": expected_name,
@@ -107,13 +131,25 @@ def main():
         # Small delay between requests.
         time.sleep(0.2)
 
+
+    # Create final JSON object
     output = {
-        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "updated_at": datetime.now(
+            timezone.utc
+        ).isoformat(),
+
         "players": players,
     }
 
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
+    # Make sure data/ exists
+    OUTPUT_FILE.parent.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+
+    # Write JSON
     OUTPUT_FILE.write_text(
         json.dumps(
             output,
@@ -123,9 +159,15 @@ def main():
         encoding="utf-8",
     )
 
+
     print()
-    print(f"Updated {len(players)} players.")
-    print(f"Saved to {OUTPUT_FILE}")
+    print(
+        f"Finished! Updated {len(players)} players."
+    )
+
+    print(
+        f"Saved to: {OUTPUT_FILE}"
+    )
 
 
 if __name__ == "__main__":
