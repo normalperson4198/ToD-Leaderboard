@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-23T17:36:52.542591+00:00",
+  "updated_at": "2026-08-23T17:55:06.008344+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 12639,
+      "global_placement": 12642,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -2847,7 +2847,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 7691,
+      "global_placement": 7693,
       "points": 0.69,
       "country": "Russia",
       "badge": "pc",
@@ -4128,7 +4128,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 7861,
+      "global_placement": 7863,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4153,7 +4153,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10103,
+      "global_placement": 10106,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
