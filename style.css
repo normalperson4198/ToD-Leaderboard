@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 40px;
+
+    background: #111827;
+    color: white;
+
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+#updated {
+    color: #9ca3af;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    max-width: 900px;
+
+    border-collapse: collapse;
+
+    background: #1f2937;
+}
+
+th,
+td {
+    padding: 14px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #374151;
+}
+
+th {
+    background: #374151;
+}
+
+tr:hover {
+    background: #273449;
+}
