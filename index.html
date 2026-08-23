@@ -19,247 +19,1020 @@
 
 <body>
 
-    <main>
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
 
-        <header>
 
-            <h1>ToD Leaderboard</h1>
+<header class="site-header">
 
-            <p>
-                Selected player statistics
-            </p>
+    <div class="header-inner">
 
-            <div id="updated">
-                Loading...
+        <div class="brand">
+
+            <div class="brand-icon">
+                GD
             </div>
 
-        </header>
+            <div>
 
+                <h1>ToD Leaderboard</h1>
 
-        <div class="table-container">
+                <span>
+                    Player Tracker
+                </span>
 
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>Player</th>
-
-                        <th>Country</th>
-
-                        <th>Placement</th>
-
-                        <th>Points</th>
-
-                        <th>Badge</th>
-
-                    </tr>
-
-                </thead>
-
-
-                <tbody id="players">
-
-                </tbody>
-
-            </table>
+            </div>
 
         </div>
 
-    </main>
+
+        <div
+            class="last-updated"
+            id="updated"
+        >
+            Loading...
+        </div>
+
+    </div>
+
+</header>
 
 
-    <script>
-
-        const COUNTRY_FLAGS = {
-
-            "Russia": "🇷🇺",
-            "Germany": "🇩🇪",
-            "United States": "🇺🇸",
-            "United Kingdom": "🇬🇧",
-            "France": "🇫🇷",
-            "Poland": "🇵🇱",
-            "Ukraine": "🇺🇦",
-            "Spain": "🇪🇸",
-            "Brazil": "🇧🇷",
-            "Canada": "🇨🇦",
-            "Australia": "🇦🇺",
-            "Netherlands": "🇳🇱",
-            "Sweden": "🇸🇪",
-            "Norway": "🇳🇴",
-            "Finland": "🇫🇮",
-            "Denmark": "🇩🇰",
-            "Italy": "🇮🇹",
-            "Japan": "🇯🇵",
-            "South Korea": "🇰🇷",
-            "China": "🇨🇳",
-            "Mexico": "🇲🇽",
-            "Argentina": "🇦🇷",
-            "Chile": "🇨🇱",
-            "Turkey": "🇹🇷",
-            "Czech Republic": "🇨🇿",
-            "Romania": "🇷🇴",
-            "Hungary": "🇭🇺",
-            "Portugal": "🇵🇹",
-            "Belgium": "🇧🇪",
-            "Austria": "🇦🇹",
-            "Switzerland": "🇨🇭"
-        };
+<main class="container">
 
 
-        function getFlag(country) {
+    <section class="hero">
 
-            return COUNTRY_FLAGS[country] || "🏳️";
+        <div>
 
+            <div class="eyebrow">
+                PLAYER DATABASE
+            </div>
+
+            <h2>
+                Track your favorite players.
+            </h2>
+
+            <p>
+                Explore placements, points,
+                countries and completed levels.
+            </p>
+
+        </div>
+
+
+        <div class="hero-stats">
+
+            <div class="stat">
+
+                <strong id="player-count">
+                    —
+                </strong>
+
+                <span>
+                    Players
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong id="total-points">
+                    —
+                </strong>
+
+                <span>
+                    Combined Points
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="toolbar">
+
+        <div class="search-wrapper">
+
+            <span class="search-icon">
+                ⌕
+            </span>
+
+            <input
+                id="search"
+                type="search"
+                placeholder="Search players..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <select id="sort">
+
+            <option value="placement">
+                Placement
+            </option>
+
+            <option value="points">
+                Points
+            </option>
+
+            <option value="name">
+                Name
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <section
+        class="players-grid"
+        id="players"
+    >
+
+        <div class="loading">
+
+            <div class="spinner"></div>
+
+            Loading players...
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- PROFILE MODAL -->
+
+<div
+    class="modal"
+    id="profile-modal"
+>
+
+    <div
+        class="modal-backdrop"
+        id="modal-backdrop"
+    ></div>
+
+
+    <div class="profile-panel">
+
+        <button
+            class="close-button"
+            id="close-modal"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <div
+            class="profile-header"
+            id="profile-header"
+        >
+
+            <!-- Filled by JavaScript -->
+
+        </div>
+
+
+        <div
+            class="profile-stats"
+            id="profile-stats"
+        >
+
+            <!-- Filled by JavaScript -->
+
+        </div>
+
+
+        <div class="levels-section">
+
+            <div class="levels-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        COMPLETIONS
+                    </span>
+
+                    <h3>
+                        Completed Levels
+                    </h3>
+
+                </div>
+
+
+                <span
+                    class="completion-count"
+                    id="completion-count"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="level-search">
+
+                <input
+                    id="level-search"
+                    type="search"
+                    placeholder="Search completed levels..."
+                >
+
+            </div>
+
+
+            <div
+                class="levels-list"
+                id="levels-list"
+            >
+
+                <!-- Filled by JavaScript -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let database = null;
+let players = [];
+let currentPlayer = null;
+
+
+const countryFlags = {
+
+    "Russia": "🇷🇺",
+    "Belarus": "🇧🇾",
+    "Ukraine": "🇺🇦",
+    "Germany": "🇩🇪",
+    "Moldova": "🇲🇩",
+    "India": "🇮🇳",
+    "Kazakhstan": "🇰🇿",
+    "United States": "🇺🇸",
+    "United Kingdom": "🇬🇧",
+    "France": "🇫🇷",
+    "Poland": "🇵🇱",
+    "Spain": "🇪🇸",
+    "Brazil": "🇧🇷",
+    "Canada": "🇨🇦",
+    "Australia": "🇦🇺",
+    "Netherlands": "🇳🇱",
+    "Sweden": "🇸🇪",
+    "Norway": "🇳🇴",
+    "Finland": "🇫🇮",
+    "Denmark": "🇩🇰",
+    "Italy": "🇮🇹",
+    "Japan": "🇯🇵",
+    "South Korea": "🇰🇷",
+    "China": "🇨🇳",
+    "Mexico": "🇲🇽",
+    "Argentina": "🇦🇷",
+    "Chile": "🇨🇱",
+    "Turkey": "🇹🇷",
+    "Czech Republic": "🇨🇿",
+    "Romania": "🇷🇴",
+    "Hungary": "🇭🇺",
+    "Portugal": "🇵🇹",
+    "Belgium": "🇧🇪",
+    "Austria": "🇦🇹",
+    "Switzerland": "🇨🇭",
+    "Unknown": "🌐"
+};
+
+
+function flag(country) {
+
+    return countryFlags[country] || "🌐";
+
+}
+
+
+function escapeHTML(value) {
+
+    if (value === null || value === undefined) {
+        return "";
+    }
+
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+}
+
+
+function formatPoints(points) {
+
+    if (
+        points === null ||
+        points === undefined
+    ) {
+        return "—";
+    }
+
+    return Number(points).toLocaleString(
+        undefined,
+        {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
         }
+    );
+
+}
 
 
-        function formatPoints(points) {
+function badgeName(badge) {
 
-            if (points === null || points === undefined) {
+    const names = {
 
-                return "—";
+        pc: "PC",
+        mobile: "Mobile",
+        former_cheater: "Former Cheater",
+        contributor: "Contributor"
 
-            }
+    };
 
-            return Number(points).toLocaleString(
-                undefined,
-                {
-                    maximumFractionDigits: 2
-                }
+    return names[badge] || badge || "Player";
+
+}
+
+
+function renderPlayers() {
+
+    const container =
+        document.getElementById("players");
+
+    const search =
+        document
+            .getElementById("search")
+            .value
+            .toLowerCase()
+            .trim();
+
+    const sort =
+        document
+            .getElementById("sort")
+            .value;
+
+
+    let filtered = players.filter(player => {
+
+        return (
+            player.username
+                .toLowerCase()
+                .includes(search)
+            ||
+            (player.country || "")
+                .toLowerCase()
+                .includes(search)
+        );
+
+    });
+
+
+    filtered.sort((a, b) => {
+
+        if (sort === "name") {
+
+            return a.username.localeCompare(
+                b.username
             );
 
         }
 
 
-        async function loadPlayers() {
+        if (sort === "points") {
 
-            const response = await fetch(
-                "data/players.json?" + Date.now()
+            return (
+                (b.points || 0) -
+                (a.points || 0)
             );
-
-            if (!response.ok) {
-
-                throw new Error(
-                    "Could not load players.json"
-                );
-
-            }
-
-
-            const data = await response.json();
-
-
-            const players =
-                Object.values(data.players);
-
-
-            /*
-             * Sort by Global Demonlist placement.
-             */
-
-            players.sort((a, b) => {
-
-                if (
-                    a.placement === null ||
-                    a.placement === undefined
-                ) {
-                    return 1;
-                }
-
-                if (
-                    b.placement === null ||
-                    b.placement === undefined
-                ) {
-                    return -1;
-                }
-
-                return a.placement - b.placement;
-
-            });
-
-
-            const tbody =
-                document.getElementById("players");
-
-
-            tbody.innerHTML = "";
-
-
-            for (const player of players) {
-
-                const row =
-                    document.createElement("tr");
-
-
-                row.innerHTML = `
-
-                    <td class="username">
-                        ${player.username}
-                    </td>
-
-                    <td>
-                        ${getFlag(player.country)}
-                        ${player.country ?? "Unknown"}
-                    </td>
-
-                    <td>
-                        ${
-                            player.placement ??
-                            "—"
-                        }
-                    </td>
-
-                    <td>
-                        ${formatPoints(player.points)}
-                    </td>
-
-                    <td>
-                        ${
-                            player.badge ??
-                            "—"
-                        }
-                    </td>
-
-                `;
-
-
-                if (player.is_banned) {
-
-                    row.classList.add("banned");
-
-                }
-
-
-                tbody.appendChild(row);
-
-            }
-
-
-            document.getElementById(
-                "updated"
-            ).textContent =
-                "Last updated: " +
-                new Date(
-                    data.updated_at
-                ).toLocaleString();
 
         }
 
 
-        loadPlayers().catch(error => {
+        return (
+            (a.placement || Infinity) -
+            (b.placement || Infinity)
+        );
 
-            console.error(error);
+    });
 
-            document.getElementById(
-                "updated"
-            ).textContent =
-                "Unable to load player data.";
+
+    if (!filtered.length) {
+
+        container.innerHTML = `
+            <div class="empty">
+                No players found.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        filtered.map(player => {
+
+            const banned =
+                player.is_banned
+                    ? "banned"
+                    : "";
+
+
+            return `
+
+                <article
+                    class="player-card ${banned}"
+                    data-id="${player.id}"
+                >
+
+                    <div class="card-top">
+
+                        <div class="placement">
+
+                            <span>#</span>
+
+                            ${
+                                player.placement ??
+                                "—"
+                            }
+
+                        </div>
+
+
+                        <div class="country">
+
+                            ${flag(player.country)}
+
+                            ${
+                                escapeHTML(
+                                    player.country ||
+                                    "Unknown"
+                                )
+                            }
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="player-main">
+
+                        <div class="avatar">
+
+                            ${escapeHTML(
+                                player.username
+                                    .charAt(0)
+                                    .toUpperCase()
+                            )}
+
+                        </div>
+
+
+                        <div class="player-name">
+
+                            <h3>
+                                ${escapeHTML(
+                                    player.username
+                                )}
+                            </h3>
+
+                            <span>
+                                ${badgeName(
+                                    player.badge
+                                )}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-bottom">
+
+                        <div>
+
+                            <span>
+                                POINTS
+                            </span>
+
+                            <strong>
+                                ${formatPoints(
+                                    player.points
+                                )}
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                COMPLETED
+                            </span>
+
+                            <strong>
+                                ${
+                                    player.completed_levels
+                                        ? player.completed_levels.length
+                                        : 0
+                                }
+                            </strong>
+
+                        </div>
+
+
+                        <button
+                            class="profile-button"
+                            onclick="openProfile(${player.id})"
+                        >
+                            View Profile
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+                </article>
+
+            `;
+
+        }).join("");
+
+}
+
+
+function openProfile(id) {
+
+    currentPlayer =
+        players.find(
+            player =>
+                Number(player.id) === Number(id)
+        );
+
+
+    if (!currentPlayer) {
+        return;
+    }
+
+
+    const modal =
+        document.getElementById(
+            "profile-modal"
+        );
+
+
+    const completed =
+        currentPlayer.completed_levels ||
+        [];
+
+
+    document.getElementById(
+        "profile-header"
+    ).innerHTML = `
+
+        <div class="profile-avatar">
+
+            ${escapeHTML(
+                currentPlayer.username
+                    .charAt(0)
+                    .toUpperCase()
+            )}
+
+        </div>
+
+
+        <div class="profile-title">
+
+            <div class="profile-name-row">
+
+                <h2>
+                    ${escapeHTML(
+                        currentPlayer.username
+                    )}
+                </h2>
+
+                ${
+                    currentPlayer.is_banned
+                    ? `
+                        <span class="banned-badge">
+                            BANNED
+                        </span>
+                    `
+                    : ""
+                }
+
+            </div>
+
+
+            <p>
+
+                ${flag(currentPlayer.country)}
+
+                ${
+                    escapeHTML(
+                        currentPlayer.country ||
+                        "Unknown"
+                    )
+                }
+
+                ·
+
+                ${badgeName(
+                    currentPlayer.badge
+                )}
+
+            </p>
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "profile-stats"
+    ).innerHTML = `
+
+        <div class="profile-stat">
+
+            <span>GLOBAL RANK</span>
+
+            <strong>
+                #${currentPlayer.placement ?? "—"}
+            </strong>
+
+        </div>
+
+
+        <div class="profile-stat">
+
+            <span>POINTS</span>
+
+            <strong>
+                ${formatPoints(
+                    currentPlayer.points
+                )}
+            </strong>
+
+        </div>
+
+
+        <div class="profile-stat">
+
+            <span>COMPLETED</span>
+
+            <strong>
+                ${completed.length}
+            </strong>
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "completion-count"
+    ).textContent =
+        completed.length;
+
+
+    document.getElementById(
+        "level-search"
+    ).value = "";
+
+
+    renderLevels();
+
+
+    modal.classList.add("open");
+
+    document.body.classList.add(
+        "modal-open"
+    );
+
+}
+
+
+function renderLevels() {
+
+    if (!currentPlayer) {
+        return;
+    }
+
+
+    const search =
+        document
+            .getElementById("level-search")
+            .value
+            .toLowerCase()
+            .trim();
+
+
+    const completed =
+        currentPlayer.completed_levels ||
+        [];
+
+
+    const filtered =
+        completed.filter(record => {
+
+            const level =
+                record.level || {};
+
+
+            return (
+                (level.name || "")
+                    .toLowerCase()
+                    .includes(search)
+            );
 
         });
 
-    </script>
+
+    const container =
+        document.getElementById(
+            "levels-list"
+        );
+
+
+    if (!filtered.length) {
+
+        container.innerHTML = `
+
+            <div class="empty-levels">
+
+                ${
+                    completed.length
+                    ? "No matching levels."
+                    : "No completed levels found."
+                }
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        filtered.map(record => {
+
+            const level =
+                record.level || {};
+
+
+            return `
+
+                <div class="level-row">
+
+                    <div class="level-placement">
+
+                        #${
+                            level.placement ??
+                            "—"
+                        }
+
+                    </div>
+
+
+                    <div class="level-info">
+
+                        <strong>
+                            ${escapeHTML(
+                                level.name ||
+                                "Unknown Level"
+                            )}
+                        </strong>
+
+                        <span>
+                            Level ID:
+                            ${
+                                level.id ??
+                                "—"
+                            }
+                        </span>
+
+                    </div>
+
+
+                    <div class="level-actions">
+
+                        <span class="accepted">
+                            ✓ 100%
+                        </span>
+
+                        ${
+                            record.video_url
+                            ? `
+                                <a
+                                    href="${escapeHTML(
+                                        record.video_url
+                                    )}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="video-link"
+                                >
+                                    Video ↗
+                                </a>
+                            `
+                            : ""
+                        }
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+}
+
+
+function closeProfile() {
+
+    document
+        .getElementById("profile-modal")
+        .classList.remove("open");
+
+    document.body.classList.remove(
+        "modal-open"
+    );
+
+    currentPlayer = null;
+
+}
+
+
+async function loadDatabase() {
+
+    const response =
+        await fetch(
+            "data/players.json?" +
+            Date.now()
+        );
+
+
+    if (!response.ok) {
+
+        throw new Error(
+            "Could not load players.json"
+        );
+
+    }
+
+
+    database =
+        await response.json();
+
+
+    players =
+        Object.values(
+            database.players
+        );
+
+
+    document.getElementById(
+        "player-count"
+    ).textContent =
+        players.length;
+
+
+    const totalPoints =
+        players.reduce(
+            (sum, player) =>
+                sum +
+                Number(player.points || 0),
+            0
+        );
+
+
+    document.getElementById(
+        "total-points"
+    ).textContent =
+        totalPoints.toLocaleString(
+            undefined,
+            {
+                maximumFractionDigits: 2
+            }
+        );
+
+
+    document.getElementById(
+        "updated"
+    ).textContent =
+        "Updated " +
+        new Date(
+            database.updated_at
+        ).toLocaleString();
+
+
+    renderPlayers();
+
+}
+
+
+document
+    .getElementById("search")
+    .addEventListener(
+        "input",
+        renderPlayers
+    );
+
+
+document
+    .getElementById("sort")
+    .addEventListener(
+        "change",
+        renderPlayers
+    );
+
+
+document
+    .getElementById("level-search")
+    .addEventListener(
+        "input",
+        renderLevels
+    );
+
+
+document
+    .getElementById("close-modal")
+    .addEventListener(
+        "click",
+        closeProfile
+    );
+
+
+document
+    .getElementById("modal-backdrop")
+    .addEventListener(
+        "click",
+        closeProfile
+    );
+
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeProfile();
+
+        }
+
+    }
+);
+
+
+loadDatabase().catch(error => {
+
+    console.error(error);
+
+    document.getElementById(
+        "players"
+    ).innerHTML = `
+
+        <div class="error">
+
+            Failed to load player data.
+
+            <br>
+
+            ${escapeHTML(
+                error.message
+            )}
+
+        </div>
+
+    `;
+
+});
+
+</script>
 
 </body>
 
