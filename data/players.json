@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-24T15:12:01.284142+00:00",
+  "updated_at": "2026-08-24T16:00:26.950079+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 12658,
+      "global_placement": 12661,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 4289,
+      "global_placement": 4290,
       "points": 2.43,
       "country": "Moldova",
       "badge": "pc",
@@ -2847,7 +2847,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 7705,
+      "global_placement": 7707,
       "points": 0.69,
       "country": "Russia",
       "badge": "pc",
@@ -4128,7 +4128,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 7875,
+      "global_placement": 7877,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4153,7 +4153,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10124,
+      "global_placement": 10125,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4961,7 +4961,7 @@
     "Skraity": {
       "id": 28896,
       "username": "Skraity",
-      "global_placement": 6164,
+      "global_placement": 6165,
       "points": 1.12,
       "country": "Ukraine",
       "badge": "pc",
@@ -5641,7 +5641,7 @@
     "z0n1x": {
       "id": 26345,
       "username": "z0n1x",
-      "global_placement": 2841,
+      "global_placement": 2842,
       "points": 5.27,
       "country": "Russia",
       "badge": "pc",
@@ -5904,7 +5904,7 @@
     "Tanker674": {
       "id": 26186,
       "username": "Tanker674",
-      "global_placement": 7007,
+      "global_placement": 7009,
       "points": 0.85,
       "country": "Belarus",
       "badge": "pc",
