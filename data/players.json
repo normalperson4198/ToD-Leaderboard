@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-24T11:56:32.186946+00:00",
+  "updated_at": "2026-08-24T12:47:54.455375+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -138,7 +138,7 @@
     "Zafsa": {
       "id": 18651,
       "username": "Zafsa",
-      "global_placement": 1238,
+      "global_placement": 1239,
       "points": 32.11,
       "country": "Russia",
       "badge": "mobile",
@@ -1462,7 +1462,7 @@
     "Фанат Абстракта": {
       "id": 951,
       "username": "Фанат Абстракта",
-      "global_placement": 1450,
+      "global_placement": 1451,
       "points": 22.39,
       "country": "Russia",
       "badge": "pc",
@@ -3286,7 +3286,7 @@
     "Mateex": {
       "id": 6053,
       "username": "Mateex",
-      "global_placement": 1212,
+      "global_placement": 1213,
       "points": 34.25,
       "country": "Ukraine",
       "badge": "mobile",
