@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-24T16:49:45.068985+00:00",
+  "updated_at": "2026-08-24T17:21:16.696299+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -1862,7 +1862,7 @@
     "SashaKray": {
       "id": 7560,
       "username": "SashaKray",
-      "global_placement": 321,
+      "global_placement": 319,
       "points": 496.95,
       "country": "Russia",
       "badge": "pc",
@@ -2654,7 +2654,7 @@
     "LoyalVladik": {
       "id": 21713,
       "username": "LoyalVladik",
-      "global_placement": 579,
+      "global_placement": 578,
       "points": 204.42,
       "country": "Russia",
       "badge": "pc",
@@ -6711,7 +6711,7 @@
       "id": 3912,
       "username": "JabkaGD",
       "global_placement": 97,
-      "points": 2079.89,
+      "points": 2075.89,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -7070,7 +7070,7 @@
           "id": 2485,
           "ingame_id": null,
           "name": "Firework",
-          "placement": 49,
+          "placement": 50,
           "points": null,
           "creator": null,
           "holder": null,
