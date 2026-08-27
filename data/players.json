@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-27T02:16:33.712482+00:00",
+  "updated_at": "2026-08-27T12:54:22.882216+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -2293,7 +2293,7 @@
     "Amabest": {
       "id": 29826,
       "username": "Amabest",
-      "global_placement": 2190,
+      "global_placement": 2191,
       "points": 8.98,
       "country": "Ukraine",
       "badge": "pc",
@@ -3879,7 +3879,7 @@
     "noN2me": {
       "id": 28295,
       "username": "noN2me",
-      "global_placement": 2195,
+      "global_placement": 2196,
       "points": 8.91,
       "country": "Ukraine",
       "badge": "mobile",
@@ -4852,7 +4852,7 @@
     "clandd": {
       "id": 29605,
       "username": "clandd",
-      "global_placement": 3046,
+      "global_placement": 3048,
       "points": 4.63,
       "country": "Belarus",
       "badge": "pc",
@@ -5641,8 +5641,8 @@
     "z0n1x": {
       "id": 26345,
       "username": "z0n1x",
-      "global_placement": 2846,
-      "points": 5.26,
+      "global_placement": 2801,
+      "points": 5.42,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -5658,6 +5658,20 @@
           "verification_url": null,
           "level_url": "https://demonlist.org/classic/1813",
           "video_url": "https://youtu.be/-KASThQqmIg?si=fvkwa8RqQrkqAI7V",
+          "percent": 100,
+          "status": "accepted"
+        },
+        {
+          "id": 3201,
+          "ingame_id": null,
+          "name": "Back On Track",
+          "placement": 1633,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/3201",
+          "video_url": "https://youtu.be/FmH0nVEFsfU?si=4JNAXAukBnQAyf7I",
           "percent": 100,
           "status": "accepted"
         },
