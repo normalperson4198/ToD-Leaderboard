@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-30T00:42:05.810296+00:00",
+  "updated_at": "2026-08-30T05:56:25.675953+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -1781,7 +1781,7 @@
     "arslnxx": {
       "id": 19027,
       "username": "arslnxx",
-      "global_placement": 4608,
+      "global_placement": 4610,
       "points": 2.14,
       "country": "India",
       "badge": "pc",
@@ -2886,7 +2886,7 @@
     "Velance": {
       "id": 24510,
       "username": "Velance",
-      "global_placement": 3276,
+      "global_placement": 3278,
       "points": 4.07,
       "country": "Russia",
       "badge": "pc",
@@ -3163,7 +3163,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4849,
+      "global_placement": 4851,
       "points": 1.93,
       "country": "Belarus",
       "badge": "pc",
@@ -4192,7 +4192,7 @@
     "Stylish": {
       "id": 2629,
       "username": "Stylish",
-      "global_placement": 3683,
+      "global_placement": 3684,
       "points": 3.29,
       "country": "Russia",
       "badge": "pc",
@@ -4357,7 +4357,7 @@
     "meyv": {
       "id": 37330,
       "username": "meyv",
-      "global_placement": 4964,
+      "global_placement": 4966,
       "points": 1.84,
       "country": "Unknown",
       "badge": "pc",
@@ -4410,7 +4410,7 @@
     "Redis_GD435": {
       "id": 21222,
       "username": "Redis_GD435",
-      "global_placement": 3287,
+      "global_placement": 3289,
       "points": 4.06,
       "country": "Russia",
       "badge": "pc",
