@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T21:00:02.185234+00:00",
+  "updated_at": "2026-09-03T23:09:04.534589+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -2900,7 +2900,7 @@
     "Velance": {
       "id": 24510,
       "username": "Velance",
-      "global_placement": 3149,
+      "global_placement": 3150,
       "points": 4.43,
       "country": "Russia",
       "badge": "pc",
@@ -3191,7 +3191,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4874,
+      "global_placement": 4875,
       "points": 1.93,
       "country": "Belarus",
       "badge": "pc",
