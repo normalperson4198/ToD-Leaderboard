@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-06T18:03:07.594489+00:00",
+  "updated_at": "2026-09-06T20:23:18.822252+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 12848,
+      "global_placement": 12849,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -1823,7 +1823,7 @@
     "arslnxx": {
       "id": 19027,
       "username": "arslnxx",
-      "global_placement": 4652,
+      "global_placement": 4653,
       "points": 2.14,
       "country": "India",
       "badge": "pc",
@@ -3233,7 +3233,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4892,
+      "global_placement": 4893,
       "points": 1.93,
       "country": "Belarus",
       "badge": "pc",
@@ -4223,7 +4223,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10286,
+      "global_placement": 10287,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4494,7 +4494,7 @@
     "Redis_GD435": {
       "id": 21222,
       "username": "Redis_GD435",
-      "global_placement": 3307,
+      "global_placement": 3309,
       "points": 4.06,
       "country": "Russia",
       "badge": "pc",
