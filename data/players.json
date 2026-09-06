@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-05T22:42:56.789672+00:00",
+  "updated_at": "2026-09-06T00:17:04.164780+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 12824,
+      "global_placement": 12825,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -3854,7 +3854,7 @@
     "CosmoReator": {
       "id": 24070,
       "username": "CosmoReator",
-      "global_placement": 4005,
+      "global_placement": 4006,
       "points": 2.86,
       "country": "Russia",
       "badge": "pc",
@@ -4209,7 +4209,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10267,
+      "global_placement": 10268,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
