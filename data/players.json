@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-06T09:00:51.432402+00:00",
+  "updated_at": "2026-09-06T12:50:43.693206+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 12831,
+      "global_placement": 12836,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -1823,7 +1823,7 @@
     "arslnxx": {
       "id": 19027,
       "username": "arslnxx",
-      "global_placement": 4645,
+      "global_placement": 4647,
       "points": 2.14,
       "country": "India",
       "badge": "pc",
@@ -2335,7 +2335,7 @@
     "Amabest": {
       "id": 29826,
       "username": "Amabest",
-      "global_placement": 2208,
+      "global_placement": 2209,
       "points": 8.98,
       "country": "Ukraine",
       "badge": "pc",
@@ -2889,7 +2889,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 7881,
+      "global_placement": 7883,
       "points": 0.68,
       "country": "Russia",
       "badge": "pc",
@@ -2928,12 +2928,26 @@
     "Velance": {
       "id": 24510,
       "username": "Velance",
-      "global_placement": 3152,
-      "points": 4.43,
+      "global_placement": 3116,
+      "points": 4.53,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
       "completed_levels": [
+        {
+          "id": 3417,
+          "ingame_id": null,
+          "name": "Molten",
+          "placement": 1739,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/3417",
+          "video_url": "https://youtu.be/rMlnvkXHu1M?si=tCWie_oXsl8Z_CJo",
+          "percent": 100,
+          "status": "accepted"
+        },
         {
           "id": 3036,
           "ingame_id": null,
@@ -3219,7 +3233,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4885,
+      "global_placement": 4887,
       "points": 1.93,
       "country": "Belarus",
       "badge": "pc",
@@ -3854,7 +3868,7 @@
     "CosmoReator": {
       "id": 24070,
       "username": "CosmoReator",
-      "global_placement": 4006,
+      "global_placement": 4007,
       "points": 2.86,
       "country": "Russia",
       "badge": "pc",
@@ -3935,7 +3949,7 @@
     "noN2me": {
       "id": 28295,
       "username": "noN2me",
-      "global_placement": 2214,
+      "global_placement": 2215,
       "points": 8.91,
       "country": "Ukraine",
       "badge": "mobile",
@@ -4184,7 +4198,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8004,
+      "global_placement": 8006,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4209,7 +4223,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10272,
+      "global_placement": 10277,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4427,7 +4441,7 @@
     "meyv": {
       "id": 37330,
       "username": "meyv",
-      "global_placement": 4992,
+      "global_placement": 4994,
       "points": 1.84,
       "country": "Unknown",
       "badge": "pc",
@@ -4645,7 +4659,7 @@
     "Kinoxas": {
       "id": 26120,
       "username": "Kinoxas",
-      "global_placement": 2421,
+      "global_placement": 2422,
       "points": 7.41,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -5031,7 +5045,7 @@
     "Skraity": {
       "id": 28896,
       "username": "Skraity",
-      "global_placement": 6241,
+      "global_placement": 6245,
       "points": 1.12,
       "country": "Ukraine",
       "badge": "pc",
@@ -6016,7 +6030,7 @@
     "Tanker674": {
       "id": 26186,
       "username": "Tanker674",
-      "global_placement": 7103,
+      "global_placement": 7105,
       "points": 0.85,
       "country": "Belarus",
       "badge": "pc",
@@ -7407,7 +7421,7 @@
     "n0rmalGD": {
       "id": 29533,
       "username": "n0rmalGD",
-      "global_placement": 2175,
+      "global_placement": 2177,
       "points": 9.23,
       "country": "Germany",
       "badge": "pc",
