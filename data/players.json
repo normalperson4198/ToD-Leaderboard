@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T05:14:37.410602+00:00",
+  "updated_at": "2026-09-11T09:50:02.556724+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -3844,11 +3844,25 @@
       "id": 21129,
       "username": "forewad",
       "global_placement": 309,
-      "points": 497.59,
+      "points": 497.84,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
       "completed_levels": [
+        {
+          "id": 3413,
+          "ingame_id": null,
+          "name": "Tung Tung Sahurcles",
+          "placement": 1489,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/3413",
+          "video_url": "https://youtu.be/f2guLa-3rpQ?si=3qiY26yj65SLwQ-a",
+          "percent": 100,
+          "status": "accepted"
+        },
         {
           "id": 2928,
           "ingame_id": null,
