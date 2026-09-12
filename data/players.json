@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-12T09:13:03.529276+00:00",
+  "updated_at": "2026-09-12T12:56:39.341990+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3640,
+      "global_placement": 3641,
       "points": 3.4,
       "country": "Moldova",
       "badge": "pc",
@@ -180,7 +180,7 @@
     "Zafsa": {
       "id": 18651,
       "username": "Zafsa",
-      "global_placement": 1032,
+      "global_placement": 1033,
       "points": 48.26,
       "country": "Russia",
       "badge": "mobile",
@@ -1518,7 +1518,7 @@
     "Фанат Абстракта": {
       "id": 951,
       "username": "Фанат Абстракта",
-      "global_placement": 1485,
+      "global_placement": 1486,
       "points": 20.76,
       "country": "Russia",
       "badge": "pc",
@@ -1837,7 +1837,7 @@
     "arslnxx": {
       "id": 19027,
       "username": "arslnxx",
-      "global_placement": 4670,
+      "global_placement": 4671,
       "points": 2.14,
       "country": "India",
       "badge": "pc",
@@ -3247,7 +3247,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4908,
+      "global_placement": 4909,
       "points": 1.93,
       "country": "Belarus",
       "badge": "pc",
@@ -3370,7 +3370,7 @@
     "Mateex": {
       "id": 6053,
       "username": "Mateex",
-      "global_placement": 1220,
+      "global_placement": 1221,
       "points": 32.18,
       "country": "Ukraine",
       "badge": "mobile",
@@ -4469,7 +4469,7 @@
     "meyv": {
       "id": 37330,
       "username": "meyv",
-      "global_placement": 5029,
+      "global_placement": 5030,
       "points": 1.83,
       "country": "Unknown",
       "badge": "pc",
@@ -4522,7 +4522,7 @@
     "Redis_GD435": {
       "id": 21222,
       "username": "Redis_GD435",
-      "global_placement": 3323,
+      "global_placement": 3324,
       "points": 4.04,
       "country": "Russia",
       "badge": "pc",
@@ -5196,7 +5196,7 @@
     "StintlerGD": {
       "id": 18689,
       "username": "StintlerGD",
-      "global_placement": 923,
+      "global_placement": 924,
       "points": 63.86,
       "country": "Belarus",
       "badge": "pc",
