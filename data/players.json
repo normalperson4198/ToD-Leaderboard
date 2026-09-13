@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-13T10:05:55.936536+00:00",
+  "updated_at": "2026-09-13T14:20:56.315803+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -3247,7 +3247,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4919,
+      "global_placement": 4920,
       "points": 1.93,
       "country": "Belarus",
       "badge": "pc",
@@ -4469,7 +4469,7 @@
     "meyv": {
       "id": 37330,
       "username": "meyv",
-      "global_placement": 5040,
+      "global_placement": 5041,
       "points": 1.83,
       "country": "Unknown",
       "badge": "pc",
@@ -4687,7 +4687,7 @@
     "Kinoxas": {
       "id": 26120,
       "username": "Kinoxas",
-      "global_placement": 2424,
+      "global_placement": 2425,
       "points": 7.4,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -5073,7 +5073,7 @@
     "Skraity": {
       "id": 28896,
       "username": "Skraity",
-      "global_placement": 6292,
+      "global_placement": 6293,
       "points": 1.12,
       "country": "Ukraine",
       "badge": "pc",
