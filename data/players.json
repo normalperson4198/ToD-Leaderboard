@@ -1,30 +1,16 @@
 {
-  "updated_at": "2026-09-14T22:35:42.063975+00:00",
+  "updated_at": "2026-09-15T00:54:39.598662+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 12993,
-      "points": 0.07,
-      "country": "Belarus",
-      "badge": "pc",
-      "is_banned": false,
-      "completed_levels": [
-        {
-          "id": 2203,
-          "ingame_id": null,
-          "name": "Acu",
-          "placement": 1790,
-          "points": null,
-          "creator": null,
-          "holder": null,
-          "verification_url": null,
-          "level_url": "https://demonlist.org/classic/2203",
-          "video_url": "https://youtu.be/JWHJMenDuC4",
-          "percent": 100,
-          "status": "accepted"
-        }
-      ]
+      "global_placement": null,
+      "points": null,
+      "country": null,
+      "badge": null,
+      "is_banned": null,
+      "completed_levels": [],
+      "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
     },
     "Magnum": {
       "id": 18356,
