@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-15T10:32:07.821580+00:00",
+  "updated_at": "2026-09-15T15:16:49.805229+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 13000,
+      "global_placement": 13001,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3645,
+      "global_placement": 3646,
       "points": 3.4,
       "country": "Moldova",
       "badge": "pc",
@@ -1518,7 +1518,7 @@
     "Фанат Абстракта": {
       "id": 951,
       "username": "Фанат Абстракта",
-      "global_placement": 1474,
+      "global_placement": 1475,
       "points": 20.74,
       "country": "Russia",
       "badge": "pc",
@@ -4251,7 +4251,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10395,
+      "global_placement": 10396,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4290,7 +4290,7 @@
     "Stylish": {
       "id": 2629,
       "username": "Stylish",
-      "global_placement": 3682,
+      "global_placement": 3683,
       "points": 3.33,
       "country": "Russia",
       "badge": "pc",
@@ -4687,7 +4687,7 @@
     "Kinoxas": {
       "id": 26120,
       "username": "Kinoxas",
-      "global_placement": 2429,
+      "global_placement": 2430,
       "points": 7.4,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -7477,7 +7477,7 @@
     "n0rmalGD": {
       "id": 29533,
       "username": "n0rmalGD",
-      "global_placement": 2313,
+      "global_placement": 2314,
       "points": 8.21,
       "country": "Germany",
       "badge": "pc",
