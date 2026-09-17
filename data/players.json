@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-17T17:08:33.105096+00:00",
+  "updated_at": "2026-09-17T20:20:34.465521+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 13039,
+      "global_placement": 13048,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3659,
+      "global_placement": 3660,
       "points": 3.4,
       "country": "Moldova",
       "badge": "pc",
@@ -2903,7 +2903,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 7994,
+      "global_placement": 7996,
       "points": 0.68,
       "country": "Russia",
       "badge": "pc",
@@ -3247,7 +3247,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4943,
+      "global_placement": 4946,
       "points": 1.93,
       "country": "Belarus",
       "badge": "pc",
@@ -3896,7 +3896,7 @@
     "CosmoReator": {
       "id": 24070,
       "username": "CosmoReator",
-      "global_placement": 4055,
+      "global_placement": 4056,
       "points": 2.84,
       "country": "Russia",
       "badge": "pc",
@@ -4226,7 +4226,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8111,
+      "global_placement": 8113,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4251,7 +4251,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10418,
+      "global_placement": 10420,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4290,12 +4290,26 @@
     "Stylish": {
       "id": 2629,
       "username": "Stylish",
-      "global_placement": 3697,
-      "points": 3.33,
+      "global_placement": 3347,
+      "points": 4.03,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
       "completed_levels": [
+        {
+          "id": 2452,
+          "ingame_id": null,
+          "name": "Balengu Vortex",
+          "placement": 746,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/2452",
+          "video_url": "https://youtu.be/ANosXfWvsk0",
+          "percent": 100,
+          "status": "accepted"
+        },
         {
           "id": 2229,
           "ingame_id": null,
@@ -4469,7 +4483,7 @@
     "meyv": {
       "id": 37330,
       "username": "meyv",
-      "global_placement": 5064,
+      "global_placement": 5067,
       "points": 1.83,
       "country": "Unknown",
       "badge": "pc",
@@ -4964,7 +4978,7 @@
     "clandd": {
       "id": 29605,
       "username": "clandd",
-      "global_placement": 3081,
+      "global_placement": 3082,
       "points": 4.63,
       "country": "Belarus",
       "badge": "pc",
@@ -5073,7 +5087,7 @@
     "Skraity": {
       "id": 28896,
       "username": "Skraity",
-      "global_placement": 6325,
+      "global_placement": 6330,
       "points": 1.12,
       "country": "Ukraine",
       "badge": "pc",
@@ -6086,7 +6100,7 @@
     "Tanker674": {
       "id": 26186,
       "username": "Tanker674",
-      "global_placement": 7227,
+      "global_placement": 7231,
       "points": 0.84,
       "country": "Belarus",
       "badge": "pc",
