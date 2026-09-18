@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T17:54:32.725415+00:00",
+  "updated_at": "2026-09-18T20:28:16.411775+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -1518,7 +1518,7 @@
     "Фанат Абстракта": {
       "id": 951,
       "username": "Фанат Абстракта",
-      "global_placement": 1478,
+      "global_placement": 1479,
       "points": 20.74,
       "country": "Russia",
       "badge": "pc",
@@ -3843,7 +3843,7 @@
     "forewad": {
       "id": 21129,
       "username": "forewad",
-      "global_placement": 311,
+      "global_placement": 312,
       "points": 477.19,
       "country": "Russia",
       "badge": "pc",
@@ -7547,12 +7547,26 @@
     "n0rmalGD": {
       "id": 29533,
       "username": "n0rmalGD",
-      "global_placement": 2320,
-      "points": 8.21,
+      "global_placement": 2314,
+      "points": 8.26,
       "country": "Germany",
       "badge": "pc",
       "is_banned": false,
       "completed_levels": [
+        {
+          "id": 3428,
+          "ingame_id": null,
+          "name": "rauchkammer",
+          "placement": 1823,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/3428",
+          "video_url": "https://www.youtube.com/watch?v=21O7SyZwgbE",
+          "percent": 100,
+          "status": "accepted"
+        },
         {
           "id": 2915,
           "ingame_id": null,
