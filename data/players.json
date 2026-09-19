@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T09:37:12.555451+00:00",
+  "updated_at": "2026-09-19T13:25:33.843652+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -4290,7 +4290,7 @@
     "Stylish": {
       "id": 2629,
       "username": "Stylish",
-      "global_placement": 3352,
+      "global_placement": 3351,
       "points": 4.03,
       "country": "Russia",
       "badge": "pc",
@@ -4536,7 +4536,7 @@
     "Redis_GD435": {
       "id": 21222,
       "username": "Redis_GD435",
-      "global_placement": 3347,
+      "global_placement": 3346,
       "points": 4.04,
       "country": "Russia",
       "badge": "pc",
