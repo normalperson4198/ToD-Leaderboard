@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-19T21:20:11.602684+00:00",
+  "updated_at": "2026-09-19T23:16:39.328460+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 13076,
+      "global_placement": 13078,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3665,
+      "global_placement": 3666,
       "points": 3.4,
       "country": "Moldova",
       "badge": "pc",
