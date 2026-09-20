@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-20T18:00:20.120878+00:00",
+  "updated_at": "2026-09-20T20:38:09.631090+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 13098,
+      "global_placement": 13100,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -2942,7 +2942,7 @@
     "Velance": {
       "id": 24510,
       "username": "Velance",
-      "global_placement": 3141,
+      "global_placement": 3142,
       "points": 4.52,
       "country": "Russia",
       "badge": "pc",
@@ -4251,7 +4251,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10455,
+      "global_placement": 10456,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
