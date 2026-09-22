@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-22T20:18:14.867065+00:00",
+  "updated_at": "2026-09-22T23:02:35.896945+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 13141,
+      "global_placement": 13148,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3677,
+      "global_placement": 3680,
       "points": 3.4,
       "country": "Moldova",
       "badge": "pc",
@@ -1532,7 +1532,7 @@
     "Фанат Абстракта": {
       "id": 951,
       "username": "Фанат Абстракта",
-      "global_placement": 1475,
+      "global_placement": 1476,
       "points": 20.72,
       "country": "Russia",
       "badge": "pc",
@@ -2363,7 +2363,7 @@
     "Amabest": {
       "id": 29826,
       "username": "Amabest",
-      "global_placement": 2215,
+      "global_placement": 2217,
       "points": 8.92,
       "country": "Ukraine",
       "badge": "pc",
@@ -2917,7 +2917,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 8048,
+      "global_placement": 8051,
       "points": 0.68,
       "country": "Russia",
       "badge": "pc",
@@ -2956,7 +2956,7 @@
     "Velance": {
       "id": 24510,
       "username": "Velance",
-      "global_placement": 3143,
+      "global_placement": 3144,
       "points": 4.52,
       "country": "Russia",
       "badge": "pc",
@@ -3910,7 +3910,7 @@
     "CosmoReator": {
       "id": 24070,
       "username": "CosmoReator",
-      "global_placement": 4076,
+      "global_placement": 4077,
       "points": 2.84,
       "country": "Russia",
       "badge": "pc",
@@ -3991,7 +3991,7 @@
     "noN2me": {
       "id": 28295,
       "username": "noN2me",
-      "global_placement": 2221,
+      "global_placement": 2222,
       "points": 8.89,
       "country": "Ukraine",
       "badge": "mobile",
@@ -4240,7 +4240,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8162,
+      "global_placement": 8166,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4265,7 +4265,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10487,
+      "global_placement": 10494,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4304,7 +4304,7 @@
     "Stylish": {
       "id": 2629,
       "username": "Stylish",
-      "global_placement": 3356,
+      "global_placement": 3357,
       "points": 4.03,
       "country": "Russia",
       "badge": "pc",
@@ -4497,7 +4497,7 @@
     "meyv": {
       "id": 37330,
       "username": "meyv",
-      "global_placement": 5104,
+      "global_placement": 5105,
       "points": 1.82,
       "country": "Unknown",
       "badge": "pc",
@@ -4550,7 +4550,7 @@
     "Redis_GD435": {
       "id": 21222,
       "username": "Redis_GD435",
-      "global_placement": 3352,
+      "global_placement": 3353,
       "points": 4.04,
       "country": "Russia",
       "badge": "pc",
@@ -4992,7 +4992,7 @@
     "clandd": {
       "id": 29605,
       "username": "clandd",
-      "global_placement": 3084,
+      "global_placement": 3086,
       "points": 4.63,
       "country": "Belarus",
       "badge": "pc",
@@ -5101,7 +5101,7 @@
     "Skraity": {
       "id": 28896,
       "username": "Skraity",
-      "global_placement": 6372,
+      "global_placement": 6375,
       "points": 1.12,
       "country": "Ukraine",
       "badge": "pc",
@@ -5225,11 +5225,25 @@
       "id": 18689,
       "username": "StintlerGD",
       "global_placement": 931,
-      "points": 59.56,
+      "points": 59.61,
       "country": "Belarus",
       "badge": "pc",
       "is_banned": false,
       "completed_levels": [
+        {
+          "id": 2382,
+          "ingame_id": null,
+          "name": "Gunslinga Corridor",
+          "placement": 1826,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/2382",
+          "video_url": "https://youtu.be/cGlXM0qQ1Y8",
+          "percent": 100,
+          "status": "accepted"
+        },
         {
           "id": 3428,
           "ingame_id": null,
@@ -6128,7 +6142,7 @@
     "Tanker674": {
       "id": 26186,
       "username": "Tanker674",
-      "global_placement": 5045,
+      "global_placement": 5046,
       "points": 1.86,
       "country": "Belarus",
       "badge": "pc",
