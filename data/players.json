@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T12:03:54.914010+00:00",
+  "updated_at": "2026-09-23T16:53:29.761365+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3681,
+      "global_placement": 3682,
       "points": 3.4,
       "country": "Moldova",
       "badge": "pc",
@@ -3910,7 +3910,7 @@
     "CosmoReator": {
       "id": 24070,
       "username": "CosmoReator",
-      "global_placement": 4077,
+      "global_placement": 4078,
       "points": 2.84,
       "country": "Russia",
       "badge": "pc",
