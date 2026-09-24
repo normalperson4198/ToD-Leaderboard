@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T06:09:53.536225+00:00",
+  "updated_at": "2026-09-24T11:42:11.203770+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -29,12 +29,26 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3684,
-      "points": 3.4,
+      "global_placement": 3628,
+      "points": 3.49,
       "country": "Moldova",
       "badge": "pc",
       "is_banned": false,
       "completed_levels": [
+        {
+          "id": 2731,
+          "ingame_id": null,
+          "name": "Prismatic",
+          "placement": 1759,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/2731",
+          "video_url": "https://youtu.be/dtx_dRBQhLc?si=wcqf9Siu_QgyN_AW",
+          "percent": 100,
+          "status": "accepted"
+        },
         {
           "id": 2343,
           "ingame_id": null,
