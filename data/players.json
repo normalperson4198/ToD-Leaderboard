@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-25T06:27:46.009176+00:00",
+  "updated_at": "2026-09-25T12:06:25.128710+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 13173,
+      "global_placement": 13176,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -194,7 +194,7 @@
     "Zafsa": {
       "id": 18651,
       "username": "Zafsa",
-      "global_placement": 1030,
+      "global_placement": 1031,
       "points": 47.44,
       "country": "Russia",
       "badge": "mobile",
@@ -1073,7 +1073,7 @@
     "Vanchos": {
       "id": 18210,
       "username": "Vanchos",
-      "global_placement": 1996,
+      "global_placement": 1997,
       "points": 10.81,
       "country": "Ukraine",
       "badge": "pc",
@@ -1865,7 +1865,7 @@
     "arslnxx": {
       "id": 19027,
       "username": "arslnxx",
-      "global_placement": 4732,
+      "global_placement": 4734,
       "points": 2.14,
       "country": "India",
       "badge": "pc",
@@ -1946,7 +1946,7 @@
     "SashaKray": {
       "id": 7560,
       "username": "SashaKray",
-      "global_placement": 342,
+      "global_placement": 347,
       "points": 409.49,
       "country": "Russia",
       "badge": "pc",
@@ -2377,7 +2377,7 @@
     "Amabest": {
       "id": 29826,
       "username": "Amabest",
-      "global_placement": 2220,
+      "global_placement": 2221,
       "points": 8.92,
       "country": "Ukraine",
       "badge": "pc",
@@ -2738,7 +2738,7 @@
     "LoyalVladik": {
       "id": 21713,
       "username": "LoyalVladik",
-      "global_placement": 604,
+      "global_placement": 608,
       "points": 155.61,
       "country": "Russia",
       "badge": "pc",
@@ -2931,7 +2931,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 8065,
+      "global_placement": 8066,
       "points": 0.68,
       "country": "Russia",
       "badge": "pc",
@@ -3275,7 +3275,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4978,
+      "global_placement": 4980,
       "points": 1.93,
       "country": "Belarus",
       "badge": "pc",
@@ -3871,12 +3871,26 @@
     "forewad": {
       "id": 21129,
       "username": "forewad",
-      "global_placement": 312,
-      "points": 477.83,
+      "global_placement": 316,
+      "points": 478.53,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
       "completed_levels": [
+        {
+          "id": 1867,
+          "ingame_id": null,
+          "name": "Auditory Breaker",
+          "placement": 740,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/1867",
+          "video_url": "https://youtu.be/fijvPy5ljVo",
+          "percent": 100,
+          "status": "accepted"
+        },
         {
           "id": 1821,
           "ingame_id": null,
@@ -3980,7 +3994,7 @@
     "CosmoReator": {
       "id": 24070,
       "username": "CosmoReator",
-      "global_placement": 4089,
+      "global_placement": 4092,
       "points": 2.84,
       "country": "Russia",
       "badge": "pc",
@@ -4061,7 +4075,7 @@
     "noN2me": {
       "id": 28295,
       "username": "noN2me",
-      "global_placement": 2225,
+      "global_placement": 2226,
       "points": 8.89,
       "country": "Ukraine",
       "badge": "mobile",
@@ -4310,7 +4324,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8182,
+      "global_placement": 8183,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4335,7 +4349,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10521,
+      "global_placement": 10524,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4567,7 +4581,7 @@
     "meyv": {
       "id": 37330,
       "username": "meyv",
-      "global_placement": 5112,
+      "global_placement": 5114,
       "points": 1.82,
       "country": "Unknown",
       "badge": "pc",
@@ -4785,7 +4799,7 @@
     "Kinoxas": {
       "id": 26120,
       "username": "Kinoxas",
-      "global_placement": 2444,
+      "global_placement": 2445,
       "points": 7.39,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -5062,7 +5076,7 @@
     "clandd": {
       "id": 29605,
       "username": "clandd",
-      "global_placement": 3092,
+      "global_placement": 3093,
       "points": 4.63,
       "country": "Belarus",
       "badge": "pc",
@@ -5171,7 +5185,7 @@
     "Skraity": {
       "id": 28896,
       "username": "Skraity",
-      "global_placement": 6383,
+      "global_placement": 6385,
       "points": 1.12,
       "country": "Ukraine",
       "badge": "pc",
@@ -5294,7 +5308,7 @@
     "StintlerGD": {
       "id": 18689,
       "username": "StintlerGD",
-      "global_placement": 931,
+      "global_placement": 933,
       "points": 59.61,
       "country": "Belarus",
       "badge": "pc",
@@ -5893,7 +5907,7 @@
     "z0n1x": {
       "id": 26345,
       "username": "z0n1x",
-      "global_placement": 2450,
+      "global_placement": 2451,
       "points": 7.32,
       "country": "Russia",
       "badge": "pc",
@@ -6212,7 +6226,7 @@
     "Tanker674": {
       "id": 26186,
       "username": "Tanker674",
-      "global_placement": 5055,
+      "global_placement": 5057,
       "points": 1.86,
       "country": "Belarus",
       "badge": "pc",
@@ -7088,7 +7102,7 @@
     "JabkaGD": {
       "id": 3912,
       "username": "JabkaGD",
-      "global_placement": 104,
+      "global_placement": 106,
       "points": 1828.39,
       "country": "Russia",
       "badge": "pc",
