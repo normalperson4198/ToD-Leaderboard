@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-25T23:27:03.908106+00:00",
+  "updated_at": "2026-09-26T01:50:28.449972+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 13197,
+      "global_placement": 13204,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3634,
+      "global_placement": 3636,
       "points": 3.49,
       "country": "Moldova",
       "badge": "pc",
@@ -1865,7 +1865,7 @@
     "arslnxx": {
       "id": 19027,
       "username": "arslnxx",
-      "global_placement": 4744,
+      "global_placement": 4745,
       "points": 2.14,
       "country": "India",
       "badge": "pc",
@@ -2931,7 +2931,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 8080,
+      "global_placement": 8084,
       "points": 0.68,
       "country": "Russia",
       "badge": "pc",
@@ -3275,7 +3275,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4897,
+      "global_placement": 4898,
       "points": 2.0,
       "country": "Belarus",
       "badge": "pc",
@@ -4338,7 +4338,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8198,
+      "global_placement": 8202,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4363,7 +4363,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10546,
+      "global_placement": 10551,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4595,7 +4595,7 @@
     "meyv": {
       "id": 37330,
       "username": "meyv",
-      "global_placement": 5123,
+      "global_placement": 5124,
       "points": 1.82,
       "country": "Unknown",
       "badge": "pc",
@@ -5199,7 +5199,7 @@
     "Skraity": {
       "id": 28896,
       "username": "Skraity",
-      "global_placement": 6398,
+      "global_placement": 6399,
       "points": 1.12,
       "country": "Ukraine",
       "badge": "pc",
@@ -6254,7 +6254,7 @@
     "Tanker674": {
       "id": 26186,
       "username": "Tanker674",
-      "global_placement": 5066,
+      "global_placement": 5067,
       "points": 1.86,
       "country": "Belarus",
       "badge": "pc",
@@ -7715,7 +7715,7 @@
     "n0rmalGD": {
       "id": 29533,
       "username": "n0rmalGD",
-      "global_placement": 2350,
+      "global_placement": 2351,
       "points": 8.01,
       "country": "Germany",
       "badge": "pc",
