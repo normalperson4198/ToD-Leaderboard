@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-28T00:00:52.712279+00:00",
+  "updated_at": "2026-09-28T05:12:24.569891+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 13222,
+      "global_placement": 13223,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -2970,7 +2970,7 @@
     "Velance": {
       "id": 24510,
       "username": "Velance",
-      "global_placement": 3154,
+      "global_placement": 3155,
       "points": 4.52,
       "country": "Russia",
       "badge": "pc",
@@ -4402,7 +4402,7 @@
     "Stylish": {
       "id": 2629,
       "username": "Stylish",
-      "global_placement": 3371,
+      "global_placement": 3372,
       "points": 4.03,
       "country": "Russia",
       "badge": "pc",
@@ -4648,7 +4648,7 @@
     "Redis_GD435": {
       "id": 21222,
       "username": "Redis_GD435",
-      "global_placement": 3366,
+      "global_placement": 3367,
       "points": 4.04,
       "country": "Russia",
       "badge": "pc",
@@ -5090,7 +5090,7 @@
     "clandd": {
       "id": 29605,
       "username": "clandd",
-      "global_placement": 3096,
+      "global_placement": 3097,
       "points": 4.63,
       "country": "Belarus",
       "badge": "pc",
