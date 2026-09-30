@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-30T20:19:41.387701+00:00",
+  "updated_at": "2026-09-30T23:59:11.207300+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 13251,
+      "global_placement": 13252,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -2931,7 +2931,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 8104,
+      "global_placement": 8105,
       "points": 0.68,
       "country": "Russia",
       "badge": "pc",
@@ -3412,7 +3412,7 @@
     "Mateex": {
       "id": 6053,
       "username": "Mateex",
-      "global_placement": 1209,
+      "global_placement": 1210,
       "points": 30.53,
       "country": "Ukraine",
       "badge": "mobile",
@@ -4338,7 +4338,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8218,
+      "global_placement": 8219,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4363,7 +4363,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10594,
+      "global_placement": 10595,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -5090,7 +5090,7 @@
     "clandd": {
       "id": 29605,
       "username": "clandd",
-      "global_placement": 3096,
+      "global_placement": 3097,
       "points": 4.63,
       "country": "Belarus",
       "badge": "pc",
