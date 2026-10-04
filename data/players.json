@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-04T20:31:16.004769+00:00",
+  "updated_at": "2026-10-04T23:34:01.029326+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgmd",
-      "global_placement": 13325,
+      "global_placement": 13327,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3661,
+      "global_placement": 3664,
       "points": 3.49,
       "country": "Moldova",
       "badge": "pc",
@@ -1865,7 +1865,7 @@
     "arslnxx": {
       "id": 19027,
       "username": "arslnxx",
-      "global_placement": 4778,
+      "global_placement": 4781,
       "points": 2.13,
       "country": "India",
       "badge": "pc",
@@ -2945,7 +2945,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 7577,
+      "global_placement": 7583,
       "points": 0.79,
       "country": "Russia",
       "badge": "pc",
@@ -2998,12 +2998,26 @@
     "Velance": {
       "id": 24510,
       "username": "Velance",
-      "global_placement": 3170,
-      "points": 4.52,
+      "global_placement": 3095,
+      "points": 4.68,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
       "completed_levels": [
+        {
+          "id": 2751,
+          "ingame_id": null,
+          "name": "Sweater Weather",
+          "placement": 1643,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/2751",
+          "video_url": "https://youtu.be/J7n2IiPyxVQ",
+          "percent": 100,
+          "status": "accepted"
+        },
         {
           "id": 3417,
           "ingame_id": null,
@@ -3303,7 +3317,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4748,
+      "global_placement": 4750,
       "points": 2.16,
       "country": "Belarus",
       "badge": "pc",
@@ -4050,7 +4064,7 @@
     "CosmoReator": {
       "id": 24070,
       "username": "CosmoReator",
-      "global_placement": 4129,
+      "global_placement": 4132,
       "points": 2.84,
       "country": "Russia",
       "badge": "pc",
@@ -4380,7 +4394,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8265,
+      "global_placement": 8271,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4405,7 +4419,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10649,
+      "global_placement": 10655,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4444,7 +4458,7 @@
     "Stylish": {
       "id": 2629,
       "username": "Stylish",
-      "global_placement": 3387,
+      "global_placement": 3389,
       "points": 4.03,
       "country": "Russia",
       "badge": "pc",
@@ -4637,7 +4651,7 @@
     "meyv": {
       "id": 37330,
       "username": "meyv",
-      "global_placement": 5171,
+      "global_placement": 5175,
       "points": 1.81,
       "country": "Unknown",
       "badge": "pc",
@@ -4690,7 +4704,7 @@
     "Redis_GD435": {
       "id": 21222,
       "username": "Redis_GD435",
-      "global_placement": 3382,
+      "global_placement": 3384,
       "points": 4.04,
       "country": "Russia",
       "badge": "pc",
@@ -5132,7 +5146,7 @@
     "clandd": {
       "id": 29605,
       "username": "clandd",
-      "global_placement": 3108,
+      "global_placement": 3111,
       "points": 4.63,
       "country": "Belarus",
       "badge": "pc",
@@ -5241,7 +5255,7 @@
     "Skraity": {
       "id": 28896,
       "username": "Skraity",
-      "global_placement": 6454,
+      "global_placement": 6456,
       "points": 1.12,
       "country": "Ukraine",
       "badge": "pc",
@@ -6338,7 +6352,7 @@
     "Tanker674": {
       "id": 26186,
       "username": "Tanker674",
-      "global_placement": 5104,
+      "global_placement": 5108,
       "points": 1.86,
       "country": "Belarus",
       "badge": "pc",
