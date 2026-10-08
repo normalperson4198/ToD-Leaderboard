@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-08T14:01:38.696036+00:00",
+  "updated_at": "2026-10-08T19:50:03.167303+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
-      "username": "went1xgmd",
-      "global_placement": 13380,
+      "username": "wasya_litvin",
+      "global_placement": 13402,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3671,
+      "global_placement": 3673,
       "points": 3.49,
       "country": "Moldova",
       "badge": "pc",
@@ -1073,7 +1073,7 @@
     "Vanchos": {
       "id": 18210,
       "username": "Vanchos",
-      "global_placement": 1937,
+      "global_placement": 1938,
       "points": 11.31,
       "country": "Ukraine",
       "badge": "pc",
@@ -1879,7 +1879,7 @@
     "arslnxx": {
       "id": 19027,
       "username": "arslnxx",
-      "global_placement": 4794,
+      "global_placement": 4796,
       "points": 2.13,
       "country": "India",
       "badge": "pc",
@@ -2405,7 +2405,7 @@
     "Amabest": {
       "id": 29826,
       "username": "Amabest",
-      "global_placement": 2199,
+      "global_placement": 2200,
       "points": 8.9,
       "country": "Ukraine",
       "badge": "pc",
@@ -2959,7 +2959,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 7613,
+      "global_placement": 7619,
       "points": 0.79,
       "country": "Russia",
       "badge": "pc",
@@ -3012,7 +3012,7 @@
     "Velance": {
       "id": 24510,
       "username": "Velance",
-      "global_placement": 3094,
+      "global_placement": 3096,
       "points": 4.68,
       "country": "Russia",
       "badge": "pc",
@@ -3331,7 +3331,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4761,
+      "global_placement": 4764,
       "points": 2.16,
       "country": "Belarus",
       "badge": "pc",
@@ -4078,7 +4078,7 @@
     "CosmoReator": {
       "id": 24070,
       "username": "CosmoReator",
-      "global_placement": 4140,
+      "global_placement": 4142,
       "points": 2.84,
       "country": "Russia",
       "badge": "pc",
@@ -4159,7 +4159,7 @@
     "noN2me": {
       "id": 28295,
       "username": "noN2me",
-      "global_placement": 2205,
+      "global_placement": 2206,
       "points": 8.86,
       "country": "Ukraine",
       "badge": "mobile",
@@ -4408,7 +4408,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8304,
+      "global_placement": 8314,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4433,7 +4433,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10690,
+      "global_placement": 10706,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4472,7 +4472,7 @@
     "Stylish": {
       "id": 2629,
       "username": "Stylish",
-      "global_placement": 3399,
+      "global_placement": 3400,
       "points": 4.03,
       "country": "Russia",
       "badge": "pc",
@@ -4665,7 +4665,7 @@
     "meyv": {
       "id": 37330,
       "username": "meyv",
-      "global_placement": 5191,
+      "global_placement": 5194,
       "points": 1.81,
       "country": "Unknown",
       "badge": "pc",
@@ -4718,7 +4718,7 @@
     "Redis_GD435": {
       "id": 21222,
       "username": "Redis_GD435",
-      "global_placement": 3397,
+      "global_placement": 3398,
       "points": 4.04,
       "country": "Russia",
       "badge": "pc",
@@ -4883,7 +4883,7 @@
     "Kinoxas": {
       "id": 26120,
       "username": "Kinoxas",
-      "global_placement": 2430,
+      "global_placement": 2433,
       "points": 7.38,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -5160,7 +5160,7 @@
     "clandd": {
       "id": 29605,
       "username": "clandd",
-      "global_placement": 3116,
+      "global_placement": 3118,
       "points": 4.63,
       "country": "Belarus",
       "badge": "pc",
@@ -5269,7 +5269,7 @@
     "Skraity": {
       "id": 28896,
       "username": "Skraity",
-      "global_placement": 6470,
+      "global_placement": 6476,
       "points": 1.12,
       "country": "Ukraine",
       "badge": "pc",
@@ -5392,12 +5392,26 @@
     "StintlerGD": {
       "id": 18689,
       "username": "StintlerGD",
-      "global_placement": 948,
-      "points": 53.42,
+      "global_placement": 946,
+      "points": 53.54,
       "country": "Belarus",
       "badge": "pc",
       "is_banned": false,
       "completed_levels": [
+        {
+          "id": 1889,
+          "ingame_id": null,
+          "name": "Anya III",
+          "placement": 1718,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/1889",
+          "video_url": "https://youtu.be/DQM6R7xudxg",
+          "percent": 100,
+          "status": "accepted"
+        },
         {
           "id": 2645,
           "ingame_id": null,
@@ -6047,7 +6061,7 @@
     "z0n1x": {
       "id": 26345,
       "username": "z0n1x",
-      "global_placement": 2439,
+      "global_placement": 2442,
       "points": 7.29,
       "country": "Russia",
       "badge": "pc",
@@ -6366,7 +6380,7 @@
     "Tanker674": {
       "id": 26186,
       "username": "Tanker674",
-      "global_placement": 5120,
+      "global_placement": 5122,
       "points": 1.86,
       "country": "Belarus",
       "badge": "pc",
@@ -6503,7 +6517,7 @@
     "Paberik": {
       "id": 31056,
       "username": "Paberik",
-      "global_placement": 1894,
+      "global_placement": 1896,
       "points": 11.79,
       "country": "Russia",
       "badge": "pc",
@@ -7827,7 +7841,7 @@
     "n0rmalGD": {
       "id": 29533,
       "username": "n0rmalGD",
-      "global_placement": 2487,
+      "global_placement": 2489,
       "points": 7.01,
       "country": "Germany",
       "badge": "pc",
