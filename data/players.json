@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-09T00:01:52.769556+00:00",
+  "updated_at": "2026-10-09T05:57:37.033783+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "wasya_litvin",
-      "global_placement": 13404,
+      "global_placement": 13405,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3673,
+      "global_placement": 3674,
       "points": 3.49,
       "country": "Moldova",
       "badge": "pc",
@@ -4408,7 +4408,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8315,
+      "global_placement": 8316,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4433,7 +4433,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10708,
+      "global_placement": 10709,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4472,7 +4472,7 @@
     "Stylish": {
       "id": 2629,
       "username": "Stylish",
-      "global_placement": 3400,
+      "global_placement": 3403,
       "points": 4.03,
       "country": "Russia",
       "badge": "pc",
@@ -4718,7 +4718,7 @@
     "Redis_GD435": {
       "id": 21222,
       "username": "Redis_GD435",
-      "global_placement": 3398,
+      "global_placement": 3401,
       "points": 4.04,
       "country": "Russia",
       "badge": "pc",
