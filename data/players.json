@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T05:57:37.033783+00:00",
+  "updated_at": "2026-10-09T12:38:25.340026+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -1960,7 +1960,7 @@
     "SashaKray": {
       "id": 7560,
       "username": "SashaKray",
-      "global_placement": 309,
+      "global_placement": 310,
       "points": 469.67,
       "country": "Russia",
       "badge": "pc",
@@ -4433,7 +4433,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10709,
+      "global_placement": 10710,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4883,7 +4883,7 @@
     "Kinoxas": {
       "id": 26120,
       "username": "Kinoxas",
-      "global_placement": 2433,
+      "global_placement": 2434,
       "points": 7.38,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -5392,7 +5392,7 @@
     "StintlerGD": {
       "id": 18689,
       "username": "StintlerGD",
-      "global_placement": 946,
+      "global_placement": 948,
       "points": 53.54,
       "country": "Belarus",
       "badge": "pc",
@@ -6061,7 +6061,7 @@
     "z0n1x": {
       "id": 26345,
       "username": "z0n1x",
-      "global_placement": 2442,
+      "global_placement": 2443,
       "points": 7.29,
       "country": "Russia",
       "badge": "pc",
@@ -7257,7 +7257,7 @@
       "id": 3912,
       "username": "JabkaGD",
       "global_placement": 107,
-      "points": 1687.65,
+      "points": 1695.65,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -7616,7 +7616,7 @@
           "id": 2485,
           "ingame_id": null,
           "name": "Firework",
-          "placement": 60,
+          "placement": 59,
           "points": null,
           "creator": null,
           "holder": null,
