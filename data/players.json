@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-09T18:32:56.425595+00:00",
+  "updated_at": "2026-10-09T22:55:00.688793+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "wasya_litvin",
-      "global_placement": 13409,
+      "global_placement": 13414,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -1879,7 +1879,7 @@
     "arslnxx": {
       "id": 19027,
       "username": "arslnxx",
-      "global_placement": 4788,
+      "global_placement": 4789,
       "points": 2.13,
       "country": "India",
       "badge": "pc",
@@ -1961,11 +1961,53 @@
       "id": 7560,
       "username": "SashaKray",
       "global_placement": 314,
-      "points": 449.26,
+      "points": 449.78,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
       "completed_levels": [
+        {
+          "id": 1755,
+          "ingame_id": null,
+          "name": "Tech Manifestation",
+          "placement": 1374,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/1755",
+          "video_url": "https://youtu.be/U_94MGRcYx4?si=dCa2AZanZSOBTVMD",
+          "percent": 100,
+          "status": "accepted"
+        },
+        {
+          "id": 2549,
+          "ingame_id": null,
+          "name": "Yuka",
+          "placement": 1770,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/2549",
+          "video_url": "https://youtu.be/U_94MGRcYx4?si=dCa2AZanZSOBTVMD",
+          "percent": 100,
+          "status": "accepted"
+        },
+        {
+          "id": 3010,
+          "ingame_id": null,
+          "name": "Through The Decay",
+          "placement": 1731,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/3010",
+          "video_url": "https://youtu.be/U_94MGRcYx4?si=dCa2AZanZSOBTVMD",
+          "percent": 100,
+          "status": "accepted"
+        },
         {
           "id": 2513,
           "ingame_id": null,
@@ -3331,7 +3373,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4755,
+      "global_placement": 4756,
       "points": 2.16,
       "country": "Belarus",
       "badge": "pc",
@@ -4433,7 +4475,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10716,
+      "global_placement": 10718,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
