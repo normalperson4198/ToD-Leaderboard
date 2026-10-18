@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T04:58:56.058639+00:00",
+  "updated_at": "2026-10-18T09:24:36.753197+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -194,8 +194,8 @@
     "Zafsa": {
       "id": 18651,
       "username": "Zafsa",
-      "global_placement": 1026,
-      "points": 45.58,
+      "global_placement": 1022,
+      "points": 45.86,
       "country": "Russia",
       "badge": "mobile",
       "is_banned": false,
@@ -1960,8 +1960,8 @@
     "SashaKray": {
       "id": 7560,
       "username": "SashaKray",
-      "global_placement": 277,
-      "points": 554.2,
+      "global_placement": 276,
+      "points": 556.2,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -2096,7 +2096,7 @@
           "id": 2563,
           "ingame_id": null,
           "name": "ORDINARY",
-          "placement": 111,
+          "placement": 110,
           "points": null,
           "creator": null,
           "holder": null,
@@ -2180,7 +2180,7 @@
           "id": 2843,
           "ingame_id": null,
           "name": "The Plunge",
-          "placement": 103,
+          "placement": 102,
           "points": null,
           "creator": null,
           "holder": null,
@@ -5532,7 +5532,7 @@
     "StintlerGD": {
       "id": 18689,
       "username": "StintlerGD",
-      "global_placement": 975,
+      "global_placement": 976,
       "points": 51.37,
       "country": "Belarus",
       "badge": "pc",
@@ -7439,7 +7439,7 @@
       "id": 3912,
       "username": "JabkaGD",
       "global_placement": 111,
-      "points": 1660.42,
+      "points": 1661.42,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -7546,7 +7546,7 @@
           "id": 2843,
           "ingame_id": null,
           "name": "The Plunge",
-          "placement": 103,
+          "placement": 102,
           "points": null,
           "creator": null,
           "holder": null,
