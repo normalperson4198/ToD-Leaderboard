@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-18T09:24:36.753197+00:00",
+  "updated_at": "2026-10-18T13:27:21.123505+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "wasya_litvin",
-      "global_placement": 13559,
+      "global_placement": 13558,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -194,7 +194,7 @@
     "Zafsa": {
       "id": 18651,
       "username": "Zafsa",
-      "global_placement": 1022,
+      "global_placement": 1023,
       "points": 45.86,
       "country": "Russia",
       "badge": "mobile",
@@ -1073,7 +1073,7 @@
     "Vanchos": {
       "id": 18210,
       "username": "Vanchos",
-      "global_placement": 1955,
+      "global_placement": 1956,
       "points": 11.3,
       "country": "Ukraine",
       "badge": "pc",
@@ -1560,7 +1560,7 @@
     "Фанат Абстракта": {
       "id": 951,
       "username": "Фанат Абстракта",
-      "global_placement": 1480,
+      "global_placement": 1481,
       "points": 19.9,
       "country": "Russia",
       "badge": "pc",
@@ -2489,7 +2489,7 @@
     "Amabest": {
       "id": 29826,
       "username": "Amabest",
-      "global_placement": 2221,
+      "global_placement": 2222,
       "points": 8.89,
       "country": "Ukraine",
       "badge": "pc",
@@ -2850,7 +2850,7 @@
     "LoyalVladik": {
       "id": 21713,
       "username": "LoyalVladik",
-      "global_placement": 680,
+      "global_placement": 681,
       "points": 119.15,
       "country": "Russia",
       "badge": "pc",
@@ -3043,7 +3043,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 7704,
+      "global_placement": 7703,
       "points": 0.79,
       "country": "Russia",
       "badge": "pc",
@@ -4534,7 +4534,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8411,
+      "global_placement": 8410,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -5409,7 +5409,7 @@
     "Skraity": {
       "id": 28896,
       "username": "Skraity",
-      "global_placement": 6548,
+      "global_placement": 6547,
       "points": 1.12,
       "country": "Ukraine",
       "badge": "pc",
@@ -5532,7 +5532,7 @@
     "StintlerGD": {
       "id": 18689,
       "username": "StintlerGD",
-      "global_placement": 976,
+      "global_placement": 977,
       "points": 51.37,
       "country": "Belarus",
       "badge": "pc",
