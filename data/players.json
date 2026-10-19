@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-19T14:05:49.793927+00:00",
+  "updated_at": "2026-10-19T19:53:49.497000+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "wasya_litvin",
-      "global_placement": 13606,
+      "global_placement": 13611,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -194,7 +194,7 @@
     "Zafsa": {
       "id": 18651,
       "username": "Zafsa",
-      "global_placement": 1024,
+      "global_placement": 1026,
       "points": 45.86,
       "country": "Russia",
       "badge": "mobile",
@@ -1879,7 +1879,7 @@
     "arslnxx": {
       "id": 19027,
       "username": "arslnxx",
-      "global_placement": 4859,
+      "global_placement": 4861,
       "points": 2.13,
       "country": "India",
       "badge": "pc",
@@ -1961,7 +1961,7 @@
       "id": 7560,
       "username": "SashaKray",
       "global_placement": 276,
-      "points": 556.2,
+      "points": 557.2,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -2124,7 +2124,7 @@
           "id": 2537,
           "ingame_id": null,
           "name": "Climax",
-          "placement": 121,
+          "placement": 120,
           "points": null,
           "creator": null,
           "holder": null,
@@ -2850,7 +2850,7 @@
     "LoyalVladik": {
       "id": 21713,
       "username": "LoyalVladik",
-      "global_placement": 681,
+      "global_placement": 682,
       "points": 119.15,
       "country": "Russia",
       "badge": "pc",
@@ -3043,7 +3043,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 7725,
+      "global_placement": 7728,
       "points": 0.79,
       "country": "Russia",
       "badge": "pc",
@@ -3096,7 +3096,7 @@
     "Velance": {
       "id": 24510,
       "username": "Velance",
-      "global_placement": 3112,
+      "global_placement": 3113,
       "points": 4.68,
       "country": "Russia",
       "badge": "pc",
@@ -3415,7 +3415,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4765,
+      "global_placement": 4767,
       "points": 2.21,
       "country": "Belarus",
       "badge": "pc",
@@ -4190,7 +4190,7 @@
     "CosmoReator": {
       "id": 24070,
       "username": "CosmoReator",
-      "global_placement": 4195,
+      "global_placement": 4198,
       "points": 2.84,
       "country": "Russia",
       "badge": "pc",
@@ -4271,7 +4271,7 @@
     "noN2me": {
       "id": 28295,
       "username": "noN2me",
-      "global_placement": 2131,
+      "global_placement": 2132,
       "points": 9.63,
       "country": "Ukraine",
       "badge": "mobile",
@@ -4534,7 +4534,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8436,
+      "global_placement": 8440,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4559,7 +4559,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 10867,
+      "global_placement": 10868,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -5314,7 +5314,7 @@
     "clandd": {
       "id": 29605,
       "username": "clandd",
-      "global_placement": 3136,
+      "global_placement": 3137,
       "points": 4.63,
       "country": "Belarus",
       "badge": "pc",
@@ -5423,7 +5423,7 @@
     "Skraity": {
       "id": 28896,
       "username": "Skraity",
-      "global_placement": 6568,
+      "global_placement": 6570,
       "points": 1.12,
       "country": "Ukraine",
       "badge": "pc",
@@ -6713,12 +6713,26 @@
     "Paberik": {
       "id": 31056,
       "username": "Paberik",
-      "global_placement": 1920,
-      "points": 11.78,
+      "global_placement": 1910,
+      "points": 11.9,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
       "completed_levels": [
+        {
+          "id": 3360,
+          "ingame_id": null,
+          "name": "BRUTAL",
+          "placement": 1709,
+          "points": null,
+          "creator": null,
+          "holder": null,
+          "verification_url": null,
+          "level_url": "https://demonlist.org/classic/3360",
+          "video_url": "https://youtu.be/cNYCrfsddJo",
+          "percent": 100,
+          "status": "accepted"
+        },
         {
           "id": 1931,
           "ingame_id": null,
@@ -7453,7 +7467,7 @@
       "id": 3912,
       "username": "JabkaGD",
       "global_placement": 112,
-      "points": 1661.42,
+      "points": 1663.42,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -7546,7 +7560,7 @@
           "id": 2537,
           "ingame_id": null,
           "name": "Climax",
-          "placement": 121,
+          "placement": 120,
           "points": null,
           "creator": null,
           "holder": null,
@@ -7672,7 +7686,7 @@
           "id": 2335,
           "ingame_id": null,
           "name": "Diabolic ClubStep",
-          "placement": 122,
+          "placement": 121,
           "points": null,
           "creator": null,
           "holder": null,
