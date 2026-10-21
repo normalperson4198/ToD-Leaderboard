@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T07:29:18.477406+00:00",
+  "updated_at": "2026-10-21T13:08:02.527103+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -3043,7 +3043,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 7750,
+      "global_placement": 7751,
       "points": 0.79,
       "country": "Russia",
       "badge": "pc",
@@ -4190,7 +4190,7 @@
     "CosmoReator": {
       "id": 24070,
       "username": "CosmoReator",
-      "global_placement": 4204,
+      "global_placement": 4206,
       "points": 2.84,
       "country": "Russia",
       "badge": "pc",
@@ -4534,7 +4534,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8472,
+      "global_placement": 8473,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
