@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T02:27:40.440860+00:00",
+  "updated_at": "2026-11-02T09:49:19.390117+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -194,7 +194,7 @@
     "Zafsa": {
       "id": 18651,
       "username": "Zafsa",
-      "global_placement": 1017,
+      "global_placement": 1015,
       "points": 46.21,
       "country": "Russia",
       "badge": "mobile",
@@ -1907,7 +1907,7 @@
     "arslnxx": {
       "id": 19027,
       "username": "arslnxx",
-      "global_placement": 4957,
+      "global_placement": 4959,
       "points": 2.13,
       "country": "India",
       "badge": "pc",
@@ -1988,7 +1988,7 @@
     "SashaKray": {
       "id": 7560,
       "username": "SashaKray",
-      "global_placement": 285,
+      "global_placement": 283,
       "points": 529.2,
       "country": "Russia",
       "badge": "pc",
@@ -2517,7 +2517,7 @@
     "Amabest": {
       "id": 29826,
       "username": "Amabest",
-      "global_placement": 2260,
+      "global_placement": 2261,
       "points": 8.89,
       "country": "Ukraine",
       "badge": "pc",
@@ -2878,7 +2878,7 @@
     "LoyalVladik": {
       "id": 21713,
       "username": "LoyalVladik",
-      "global_placement": 707,
+      "global_placement": 706,
       "points": 111.15,
       "country": "Russia",
       "badge": "pc",
@@ -3071,7 +3071,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 7921,
+      "global_placement": 7922,
       "points": 0.79,
       "country": "Russia",
       "badge": "pc",
@@ -3443,7 +3443,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4781,
+      "global_placement": 4783,
       "points": 2.29,
       "country": "Belarus",
       "badge": "pc",
@@ -4095,7 +4095,7 @@
     "forewad": {
       "id": 21129,
       "username": "forewad",
-      "global_placement": 317,
+      "global_placement": 315,
       "points": 460.79,
       "country": "Russia",
       "badge": "pc",
@@ -4797,7 +4797,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 11157,
+      "global_placement": 11158,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -5247,7 +5247,7 @@
     "Kinoxas": {
       "id": 26120,
       "username": "Kinoxas",
-      "global_placement": 2263,
+      "global_placement": 2264,
       "points": 8.88,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -5784,7 +5784,7 @@
     "StintlerGD": {
       "id": 18689,
       "username": "StintlerGD",
-      "global_placement": 982,
+      "global_placement": 979,
       "points": 50.07,
       "country": "Belarus",
       "badge": "pc",
@@ -7803,7 +7803,7 @@
       "id": 3912,
       "username": "JabkaGD",
       "global_placement": 112,
-      "points": 1636.18,
+      "points": 1628.18,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -8162,7 +8162,7 @@
           "id": 2485,
           "ingame_id": null,
           "name": "Firework",
-          "placement": 61,
+          "placement": 62,
           "points": null,
           "creator": null,
           "holder": null,
@@ -8387,7 +8387,7 @@
     "n0rmalGD": {
       "id": 29533,
       "username": "n0rmalGD",
-      "global_placement": 2573,
+      "global_placement": 2574,
       "points": 6.89,
       "country": "Germany",
       "badge": "pc",
