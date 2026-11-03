@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T02:02:59.552112+00:00",
+  "updated_at": "2026-11-03T09:27:54.100470+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
@@ -194,7 +194,7 @@
     "Zafsa": {
       "id": 18651,
       "username": "Zafsa",
-      "global_placement": 1015,
+      "global_placement": 1016,
       "points": 46.21,
       "country": "Russia",
       "badge": "mobile",
@@ -1989,7 +1989,7 @@
       "id": 7560,
       "username": "SashaKray",
       "global_placement": 283,
-      "points": 529.2,
+      "points": 528.2,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -2124,7 +2124,7 @@
           "id": 2563,
           "ingame_id": null,
           "name": "ORDINARY",
-          "placement": 111,
+          "placement": 112,
           "points": null,
           "creator": null,
           "holder": null,
@@ -4095,7 +4095,7 @@
     "forewad": {
       "id": 21129,
       "username": "forewad",
-      "global_placement": 315,
+      "global_placement": 316,
       "points": 460.79,
       "country": "Russia",
       "badge": "pc",
@@ -4313,7 +4313,7 @@
     "noN2me": {
       "id": 28295,
       "username": "noN2me",
-      "global_placement": 1609,
+      "global_placement": 1608,
       "points": 17.12,
       "country": "Ukraine",
       "badge": "mobile",
