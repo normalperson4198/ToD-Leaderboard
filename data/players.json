@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-10T07:11:48.069045+00:00",
+  "updated_at": "2026-11-10T15:37:43.802116+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgd",
-      "global_placement": 14168,
+      "global_placement": 14169,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -3650,7 +3650,7 @@
     "Mateex": {
       "id": 6053,
       "username": "Mateex",
-      "global_placement": 1264,
+      "global_placement": 1263,
       "points": 28.87,
       "country": "Ukraine",
       "badge": "mobile",
@@ -4814,7 +4814,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 8794,
+      "global_placement": 8795,
       "points": 0.66,
       "country": "Unknown",
       "badge": "pc",
@@ -4839,7 +4839,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 11325,
+      "global_placement": 11326,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -7984,8 +7984,8 @@
     "JabkaGD": {
       "id": 3912,
       "username": "JabkaGD",
-      "global_placement": 137,
-      "points": 1553.28,
+      "global_placement": 139,
+      "points": 1544.28,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -8204,7 +8204,7 @@
           "id": 2335,
           "ingame_id": null,
           "name": "Diabolic ClubStep",
-          "placement": 124,
+          "placement": 133,
           "points": null,
           "creator": null,
           "holder": null,
