@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-25T22:48:23.258563+00:00",
+  "updated_at": "2026-11-26T04:33:01.829018+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgd",
-      "global_placement": 14496,
+      "global_placement": 14503,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3939,
+      "global_placement": 3940,
       "points": 3.47,
       "country": "Moldova",
       "badge": "pc",
@@ -3085,7 +3085,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 8249,
+      "global_placement": 8252,
       "points": 0.79,
       "country": "Russia",
       "badge": "pc",
@@ -3485,7 +3485,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4440,
+      "global_placement": 4441,
       "points": 2.84,
       "country": "Belarus",
       "badge": "pc",
@@ -4316,7 +4316,7 @@
     "CosmoReator": {
       "id": 24070,
       "username": "CosmoReator",
-      "global_placement": 4437,
+      "global_placement": 4438,
       "points": 2.84,
       "country": "Russia",
       "badge": "pc",
@@ -4856,7 +4856,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 9042,
+      "global_placement": 9045,
       "points": 0.65,
       "country": "Unknown",
       "badge": "pc",
@@ -4881,7 +4881,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 11594,
+      "global_placement": 11597,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
