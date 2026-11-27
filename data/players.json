@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-27T15:00:42.362274+00:00",
+  "updated_at": "2026-11-27T23:22:42.044952+00:00",
   "players": {
     "went1xgmd": {
       "id": 38987,
       "username": "went1xgd",
-      "global_placement": 14518,
+      "global_placement": 14533,
       "points": 0.07,
       "country": "Belarus",
       "badge": "pc",
@@ -29,7 +29,7 @@
     "Magnum": {
       "id": 18356,
       "username": "Magnum",
-      "global_placement": 3943,
+      "global_placement": 3954,
       "points": 3.47,
       "country": "Moldova",
       "badge": "pc",
@@ -1087,7 +1087,7 @@
     "Vanchos": {
       "id": 18210,
       "username": "Vanchos",
-      "global_placement": 1981,
+      "global_placement": 1982,
       "points": 11.92,
       "country": "Ukraine",
       "badge": "pc",
@@ -1588,7 +1588,7 @@
     "Фанат Абстракта": {
       "id": 951,
       "username": "Фанат Абстракта",
-      "global_placement": 1525,
+      "global_placement": 1527,
       "points": 19.62,
       "country": "Russia",
       "badge": "pc",
@@ -1921,7 +1921,7 @@
     "arslnxx": {
       "id": 19027,
       "username": "arslnxx",
-      "global_placement": 5163,
+      "global_placement": 5173,
       "points": 2.13,
       "country": "India",
       "badge": "pc",
@@ -2002,8 +2002,8 @@
     "SashaKray": {
       "id": 7560,
       "username": "SashaKray",
-      "global_placement": 331,
-      "points": 475.29,
+      "global_placement": 340,
+      "points": 465.29,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -2012,7 +2012,7 @@
           "id": 1981,
           "ingame_id": null,
           "name": "Saul Goodman",
-          "placement": 77,
+          "placement": 78,
           "points": null,
           "creator": null,
           "holder": null,
@@ -2096,7 +2096,7 @@
           "id": 2513,
           "ingame_id": null,
           "name": "MINUSdry",
-          "placement": 78,
+          "placement": 79,
           "points": null,
           "creator": null,
           "holder": null,
@@ -2152,7 +2152,7 @@
           "id": 2050,
           "ingame_id": null,
           "name": "poocubed",
-          "placement": 73,
+          "placement": 74,
           "points": null,
           "creator": null,
           "holder": null,
@@ -2531,7 +2531,7 @@
     "Amabest": {
       "id": 29826,
       "username": "Amabest",
-      "global_placement": 2337,
+      "global_placement": 2342,
       "points": 8.89,
       "country": "Ukraine",
       "badge": "pc",
@@ -2892,8 +2892,8 @@
     "LoyalVladik": {
       "id": 21713,
       "username": "LoyalVladik",
-      "global_placement": 786,
-      "points": 92.74,
+      "global_placement": 788,
+      "points": 91.74,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -2930,7 +2930,7 @@
           "id": 1981,
           "ingame_id": null,
           "name": "Saul Goodman",
-          "placement": 77,
+          "placement": 78,
           "points": null,
           "creator": null,
           "holder": null,
@@ -3085,7 +3085,7 @@
     "egyssgd": {
       "id": 31906,
       "username": "egyssgd",
-      "global_placement": 8257,
+      "global_placement": 8269,
       "points": 0.79,
       "country": "Russia",
       "badge": "pc",
@@ -3138,7 +3138,7 @@
     "Velance": {
       "id": 24510,
       "username": "Velance",
-      "global_placement": 3137,
+      "global_placement": 3145,
       "points": 5.09,
       "country": "Russia",
       "badge": "pc",
@@ -3485,7 +3485,7 @@
     "ferux": {
       "id": 33994,
       "username": "ferux",
-      "global_placement": 4443,
+      "global_placement": 4453,
       "points": 2.84,
       "country": "Belarus",
       "badge": "pc",
@@ -4151,7 +4151,7 @@
     "forewad": {
       "id": 21129,
       "username": "forewad",
-      "global_placement": 305,
+      "global_placement": 307,
       "points": 563.24,
       "country": "Russia",
       "badge": "pc",
@@ -4316,7 +4316,7 @@
     "CosmoReator": {
       "id": 24070,
       "username": "CosmoReator",
-      "global_placement": 4440,
+      "global_placement": 4450,
       "points": 2.84,
       "country": "Russia",
       "badge": "pc",
@@ -4397,7 +4397,7 @@
     "noN2me": {
       "id": 28295,
       "username": "noN2me",
-      "global_placement": 1638,
+      "global_placement": 1639,
       "points": 17.13,
       "country": "Ukraine",
       "badge": "mobile",
@@ -4856,7 +4856,7 @@
     "M Ok You": {
       "id": 41742,
       "username": "M Ok You",
-      "global_placement": 9054,
+      "global_placement": 9067,
       "points": 0.65,
       "country": "Unknown",
       "badge": "pc",
@@ -4881,7 +4881,7 @@
     "mirageee": {
       "id": 28256,
       "username": "mirageee",
-      "global_placement": 11606,
+      "global_placement": 11619,
       "points": 0.27,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -4920,7 +4920,7 @@
     "Stylish": {
       "id": 2629,
       "username": "Stylish",
-      "global_placement": 3621,
+      "global_placement": 3633,
       "points": 4.02,
       "country": "Russia",
       "badge": "pc",
@@ -5113,7 +5113,7 @@
     "meyv": {
       "id": 37330,
       "username": "meyv",
-      "global_placement": 5603,
+      "global_placement": 5613,
       "points": 1.81,
       "country": "Unknown",
       "badge": "pc",
@@ -5166,7 +5166,7 @@
     "Redis_GD435": {
       "id": 21222,
       "username": "Redis_GD435",
-      "global_placement": 3618,
+      "global_placement": 3630,
       "points": 4.03,
       "country": "Russia",
       "badge": "pc",
@@ -5331,7 +5331,7 @@
     "Kinoxas": {
       "id": 26120,
       "username": "Kinoxas",
-      "global_placement": 2336,
+      "global_placement": 2341,
       "points": 8.89,
       "country": "Kazakhstan",
       "badge": "pc",
@@ -5636,7 +5636,7 @@
     "clandd": {
       "id": 29605,
       "username": "clandd",
-      "global_placement": 3315,
+      "global_placement": 3325,
       "points": 4.61,
       "country": "Belarus",
       "badge": "pc",
@@ -5745,7 +5745,7 @@
     "Skraity": {
       "id": 28896,
       "username": "Skraity",
-      "global_placement": 6991,
+      "global_placement": 7000,
       "points": 1.12,
       "country": "Ukraine",
       "badge": "pc",
@@ -5868,8 +5868,8 @@
     "StintlerGD": {
       "id": 18689,
       "username": "StintlerGD",
-      "global_placement": 1051,
-      "points": 45.18,
+      "global_placement": 1067,
+      "points": 43.02,
       "country": "Belarus",
       "badge": "pc",
       "is_banned": false,
@@ -6621,7 +6621,7 @@
     "z0n1x": {
       "id": 26345,
       "username": "z0n1x",
-      "global_placement": 1941,
+      "global_placement": 1942,
       "points": 12.3,
       "country": "Russia",
       "badge": "pc",
@@ -7108,7 +7108,7 @@
     "Tanker674": {
       "id": 26186,
       "username": "Tanker674",
-      "global_placement": 5529,
+      "global_placement": 5539,
       "points": 1.86,
       "country": "Belarus",
       "badge": "pc",
@@ -7245,7 +7245,7 @@
     "Paberik": {
       "id": 31056,
       "username": "Paberik",
-      "global_placement": 1758,
+      "global_placement": 1759,
       "points": 14.9,
       "country": "Russia",
       "badge": "pc",
@@ -8124,8 +8124,8 @@
     "JabkaGD": {
       "id": 3912,
       "username": "JabkaGD",
-      "global_placement": 136,
-      "points": 1515.46,
+      "global_placement": 138,
+      "points": 1513.04,
       "country": "Russia",
       "badge": "pc",
       "is_banned": false,
@@ -8162,7 +8162,7 @@
           "id": 2535,
           "ingame_id": null,
           "name": "The Hallucination",
-          "placement": 79,
+          "placement": 80,
           "points": null,
           "creator": null,
           "holder": null,
@@ -8428,7 +8428,7 @@
           "id": 1981,
           "ingame_id": null,
           "name": "Saul Goodman",
-          "placement": 77,
+          "placement": 78,
           "points": null,
           "creator": null,
           "holder": null,
@@ -8709,7 +8709,7 @@
     "n0rmalGD": {
       "id": 29533,
       "username": "n0rmalGD",
-      "global_placement": 2822,
+      "global_placement": 2829,
       "points": 6.14,
       "country": "Germany",
       "badge": "pc",
